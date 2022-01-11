@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 603106248
+CRC: 2992686978
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fd2ea3f16c6f02bb2f39c93b42ce4acd
+    Hash: 69b2e1449ec5cf0bc0109a8c41b5df40
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cfee1cba14128490c17966d520552d70
+    Hash: 79b15d983739b5dac47798470a2a5982
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,6 +24,8 @@ ClassTypes:
 - Class: 43
   Script: {instanceID: 0}
 - Class: 48
+  Script: {instanceID: 0}
+- Class: 49
   Script: {instanceID: 0}
 - Class: 54
   Script: {instanceID: 0}
@@ -44,7 +46,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2705215ac5b84b70bacc50632be6e391, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ad074644ff568a14187a3690cfbd7534, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
 - Class: 114
@@ -101,26 +113,34 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShader.shader
+- Assets/Oculus/VR/Resources/Unlit Transparent Color.shader
+- Assets/Oculus/Avatar/Resources/Materials/Expressive/Avatar_Mobile_SingleComponentExpressive.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+- Assets/Oculus/Voice/Lib/Wit.ai/Resources/witai.png
 - Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/BigAsteroid.prefab
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_normal_1024.tif
 - Assets/Resources/OculusRuntimeSettings.asset
+- Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
 - Assets/Oculus/Avatar/Resources/Materials/AvatarPBRV2Simple.shader
-- Assets/Oculus/Avatar/Resources/Materials/Version1.5/Avatar_PC_SingleComponent.shader
 - Assets/Oculus/Voice/Lib/Wit.ai/Resources/wit-ai-title.png
+- Assets/Oculus/Avatar/Resources/Materials/Version1.5/Avatar_PC_SingleComponent.shader
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_normal_256.png
 - Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Resources/Player Controller.prefab
 - Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
 - Assets/Oculus/Avatar/Resources/Materials/Version1.5/Avatar_Mobile_CombinedMesh.shader
 - Assets/Oculus/VR/Resources/OVRMRCameraFrameLit.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+- Assets/Resources/ONSPSettings.asset
 - Assets/Oculus/VR/Resources/Cubemap Blit.shader
 - Assets/Oculus/VR/Resources/Underlay Impostor.shader
 - Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Resources/Spaceship.prefab
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
 - Assets/Oculus/VR/Resources/Underlay Transparent Occluder.shader
 - Assets/Resources/OVRBuildConfig.asset
 - Assets/Resources/OVRPlatformToolSettings.asset
-- Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_2048.png
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShaderSelfOccluding.shader
+- Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_2048.png
+- Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
 - Assets/Oculus/VR/Resources/OVRMRUnlitTransparent.shader
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_1024.png
 - Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot
@@ -129,6 +149,7 @@ Assets:
 - Assets/Oculus/VR/Resources/OVRMRUnlit.shader
 - Assets/Oculus/Voice/Resources/voicesdk_heroart.png
 - Assets/Oculus/Avatar/Resources/Materials/Expressive/AvatarEyeLens.shader
+- Assets/TextMesh Pro/Resources/TMP Settings.asset
 - Assets/Oculus/VR/Resources/OVRMRCameraFrame.shader
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShaderPBS.shader
 - Assets/Oculus/Avatar/Resources/Materials/Version1.5/Avatar_Mobile_SingleComponent.shader
@@ -136,11 +157,12 @@ Assets:
 - Assets/Oculus/Avatar/Resources/Materials/Expressive/Avatar_Mobile_CombinedMeshExpressive.shader
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_normal_2048.png
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShaderPBSV2.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_256.png
 - Assets/Oculus/Voice/Lib/Wit.ai/Resources/continue-with-fb.png
 - Assets/Oculus/Avatar/Resources/Materials/Version1.5/Avatar_Mobile_Loader.shader
-- Assets/Oculus/Voice/Lib/Wit.ai/Resources/witai.png
-- Assets/Oculus/Avatar/Resources/Materials/Expressive/Avatar_Mobile_SingleComponentExpressive.shader
+- Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
 - Assets/Oculus/VR/Resources/Texture2D Blit.shader
-- Assets/Oculus/VR/Resources/Unlit Transparent Color.shader
+- Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+- Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShader.shader
 Dependencies: []

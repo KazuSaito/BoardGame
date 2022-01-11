@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2461543848
+CRC: 755797981
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 86c633be5c74c67bf0649f9b7c3e5eff
+    Hash: 9977ef2dd0f18df7afbea1c60fb12796
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7024b0dfe738602ed62209e17b61c989
+    Hash: aecbf713a014f6430b91bf32145d5680
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -19,9 +19,13 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
+  Script: {instanceID: 0}
+- Class: 48
   Script: {instanceID: 0}
 - Class: 64
   Script: {instanceID: 0}
@@ -34,9 +38,17 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ef803169364cc6e4d9b4df31d9c7fed7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
 - Class: 114
@@ -44,24 +56,45 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 8f1a9a1d119a5944aacfb87d1ec283a2, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: b558aa8ebb866bd4da56c536a7b4eb71, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bcfb3e784bd15cc4b9ec9243403c553b, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 120
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
 - Class: 143
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Prefabs/Tile1_pre.prefab
+- Assets/Oculus/SampleFramework/Core/DebugUI/Prefabs/UIHelpers.prefab
 - Assets/Prefabs/Tile2_pre.prefab
 - Assets/Oculus/VR/Prefabs/OVRPlayerController.prefab
+- Assets/Prefabs/MoveButton.prefab
 - Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
 Dependencies:
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_asset0
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_controller0
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_fbx0
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_mat0

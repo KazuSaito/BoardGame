@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1272775444
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 91d2d2e4a81100ed8f09b12032ab2e92
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 37704be350e2c6af798e08a59c32d28e
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/TextMesh Pro/HGRGE.TTC
+Dependencies: []
