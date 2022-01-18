@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2992686978
+CRC: 1171633152
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 69b2e1449ec5cf0bc0109a8c41b5df40
+    Hash: 785508eb638cff36d947f24fc55440bb
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 79b15d983739b5dac47798470a2a5982
+    Hash: fea3a67c9c7745ed8902024a8e64288e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,13 +40,23 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  Script: {fileID: 11500000, guid: dba1a179e553446f0a08606778f559f1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ab2114bdc8544297b417dfefe9f1e410, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6321a7d9112988841b7223ac6a925bfc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 507e5741cec8a42dc964c8e0a4b55bd6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 98fac77b304554f238a61572f5720187, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2705215ac5b84b70bacc50632be6e391, type: 3}
 - Class: 114
@@ -56,37 +66,29 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: dba1a179e553446f0a08606778f559f1, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 6321a7d9112988841b7223ac6a925bfc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 507e5741cec8a42dc964c8e0a4b55bd6, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: c565458f43b8ad4469a2ca341c210318, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4fde14656bc40455ba65844c093b79a3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: c852cc8bbc743374083cab6f7df68bb7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 98fac77b304554f238a61572f5720187, type: 3}
+  Script: {fileID: 16995157, guid: a811bde74b26b53498b4f6d872b09b6d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -141,6 +143,7 @@ Assets:
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShaderSelfOccluding.shader
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_2048.png
 - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+- Assets/Resources/DOTweenSettings.asset
 - Assets/Oculus/VR/Resources/OVRMRUnlitTransparent.shader
 - Assets/Oculus/Avatar/Resources/FallbackTextures/fallback_diffuse_roughness_1024.png
 - Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Resources/My Robot
@@ -165,4 +168,6 @@ Assets:
 - Assets/Oculus/VR/Resources/Texture2D Blit.shader
 - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
 - Assets/Oculus/Avatar/Resources/Materials/AvatarSurfaceShader.shader
-Dependencies: []
+Dependencies:
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_ttf0

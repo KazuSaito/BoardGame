@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2997970751
+CRC: 1152652087
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d2434fb9316de2a4754c4a3f7b124061
+    Hash: 292090cfb8e94beb1b122e0ee4108731
   TypeTreeHash:
     serializedVersion: 2
     Hash: b93bd442b8167f85f0de1ddd2c5f516d
@@ -19,6 +19,7 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Materials/OculusTouchForRift_Material.mat
+- Assets/CurvedUI/Demo Scenes/Demo Scenes Content/CUI_laserbeam.mat
 - Assets/Materials/Tile2.mat
 - Assets/Materials/Tile1.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_MAT.mat
