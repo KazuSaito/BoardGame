@@ -22,7 +22,8 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerMovement (string movementName)
     {
-        // 現状は同時行動的にしている。ゲーム制として交互手順のほうが面白そうな場合には変更する => プレイヤーのアクション後にcoroutine処理 
+        // 現状は選んだ行動によって順番をコントロール、移動を先に処理し、その後攻撃を処理
+        // ゲーム制として交互手順のほうが面白そうな場合には変更する => プレイヤーのアクション後にcoroutine処理 
         enemyMove.EnemyAction();
 
         switch (movementName)
