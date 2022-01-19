@@ -47,14 +47,28 @@ public class EnemyMove : MonoBehaviour
                 else
                 {
                     anim.SetTrigger("leftRightTrigger");
-                    transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
+                    if (this.transform.position.x < 2.0f)
+                    {
+                        transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
+                    }
+                    else
+                    {
+                        transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
+                    }
                 }
             }
 
             else if (xDist > 3.0f)
             {
                 anim.SetTrigger("leftRightTrigger");
-                transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
+                if (this.transform.position.x < 2.0f)
+                {
+                    transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
+                }
+                else
+                {
+                    transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
+                }
             }
 
             else
