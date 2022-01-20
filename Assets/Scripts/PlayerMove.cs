@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject kunai;
+
     private float positionY = 1.0f;
 
     private float posChange = 0.5f;
@@ -18,6 +20,9 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField]
     private GameObject playerModel;
+
+    [SerializeField]
+    private GameObject rightHandIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +82,15 @@ public class PlayerMove : MonoBehaviour
                     playerModel.transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                     // this.transform.position = new Vector3(this.transform.position.x - posChange, positionY, this.transform.position.z);
                 }
+                break;
+
+            case "SwordButton":
+
+                break;
+
+            case "GunButton":
+                var obj = Instantiate(kunai, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
+                obj.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 30));
                 break;
         }
 

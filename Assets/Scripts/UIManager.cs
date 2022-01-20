@@ -51,10 +51,12 @@ public class UIManager : MonoBehaviour
 
                 case "SwordButton":
                     StartCoroutine("visibleActionButtons", 1);
+                    playerMove.PlayerMovement(clickedButtonName);
                     break;
 
                 case "GunButton":
                     StartCoroutine("visibleActionButtons", 1);
+                    playerMove.PlayerMovement(clickedButtonName);
                     break;
 
                 default:

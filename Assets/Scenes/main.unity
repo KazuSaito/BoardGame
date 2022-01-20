@@ -152,9 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14123bdfb5b05414dafd00bc45f3581c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kunai: {fileID: 4983360884858900544, guid: 5d5949238a256d8418a389d365af6e00, type: 3}
   enemy: {fileID: 1585974138}
   playerAnim: {fileID: 1436929010}
   playerModel: {fileID: 1199209189}
+  rightHandIndex: {fileID: 1322143350}
 --- !u!4 &73158178
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,6 +2245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+--- !u!1 &1322143350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2833529638471671775, guid: 1ad67c1a91a1b204db21ae809a1fa1fb, type: 3}
+  m_PrefabInstance: {fileID: 1436929008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1378246485
 PrefabInstance:
   m_ObjectHideFlags: 0
