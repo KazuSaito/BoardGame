@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     private float posChange = 0.5f;
 
+    private int isMaster = 1;
+
     [SerializeField]
     private GameObject enemy;
     private EnemyMove enemyMove;
@@ -94,5 +96,13 @@ public class PlayerMove : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void IsMaster(bool playerOrder)
+    {
+        if (!playerOrder)
+            isMaster = -1;
+        else
+            isMaster = 1;
     }
 }
