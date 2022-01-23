@@ -29,15 +29,17 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(0, 0, 0);
-        enemyMove = enemy.GetComponent<EnemyMove>();
+        // Photon利用の場合はinstantiate側で初期位置設定のため以下の一文は不要
+        // this.transform.position = new Vector3(0, 0, 0);
+        // enemyはinstantiateされた後に検索する必要があるので要変更
+        // enemyMove = enemy.GetComponent<EnemyMove>();
     }
 
     public void PlayerMovement (string movementName)
     {
         // 現状は選んだ行動によって順番をコントロール、移動を先に処理し、その後攻撃を処理
         // ゲーム制として交互手順のほうが面白そうな場合には変更する => プレイヤーのアクション後にcoroutine処理 
-        enemyMove.EnemyAction();
+        // enemyMove.EnemyAction();
 
         switch (movementName)
         {
