@@ -82,7 +82,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
             case "GunButton":
                 var obj = Instantiate(kunai, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
-                obj.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, kunaiSpeed));
+                obj.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
                 break;
         }
 

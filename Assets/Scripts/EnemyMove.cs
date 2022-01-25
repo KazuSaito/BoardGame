@@ -17,7 +17,6 @@ public class EnemyMove : MonoBehaviour
 
     public void EnemyAction()
     {
-        Debug.Log("Enemy move will start");
         // distance = Vector3.Distance(player.transform.position, transform.position);
         xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
         zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
