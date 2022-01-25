@@ -15,20 +15,9 @@ public class EnemyMove : MonoBehaviour
     private float zDist;
     private float distance;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void EnemyAction()
     {
+        Debug.Log("Enemy move will start");
         // distance = Vector3.Distance(player.transform.position, transform.position);
         xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
         zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
@@ -41,18 +30,19 @@ public class EnemyMove : MonoBehaviour
             {
                 if (xOrz == 0)
                 {
-                    anim.SetTrigger("forwardTrigger");
+                    anim.SetTrigger("ForwardTrigger");
                     transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
                 }
                 else
                 {
-                    anim.SetTrigger("leftRightTrigger");
                     if (this.transform.position.x < 2.0f)
                     {
+                        anim.SetTrigger("RightTrigger");
                         transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                     }
                     else
                     {
+                        anim.SetTrigger("LeftTrigger");
                         transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                     }
                 }
@@ -60,13 +50,14 @@ public class EnemyMove : MonoBehaviour
 
             else if (xDist > 3.0f)
             {
-                anim.SetTrigger("leftRightTrigger");
                 if (this.transform.position.x < 2.0f)
                 {
+                    anim.SetTrigger("RightTrigger");
                     transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                 }
                 else
                 {
+                    anim.SetTrigger("LeftTrigger");
                     transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                 }
             }
@@ -75,12 +66,12 @@ public class EnemyMove : MonoBehaviour
             {
                 if (xOrz == 0)
                 {
-                    anim.SetTrigger("backTrigger");
+                    anim.SetTrigger("BackTrigger");
                     transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
                 }
                 else
                 {
-                    anim.SetTrigger("swordTrigger");
+                    anim.SetTrigger("SwordTrigger");
                     Debug.Log("Short Attack!");
                 }
             }

@@ -7,7 +7,7 @@ using TMPro;
 public class Clicked : MonoBehaviour
 {
     [SerializeField]
-    private GameObject UIManager;
+    private GameObject buttonManager;
 
     [SerializeField]
     private GameObject thisButton;
@@ -17,13 +17,13 @@ public class Clicked : MonoBehaviour
 
     // 参照先はprivateでも良さそう (初期処理では問題なし)
     [SerializeField]
-    private UIManager changeButtonTypes;
+    private ButtonManager changeButtonTypes;
 
     // Start is called before the first frame update
     void Start()
     {
-        // UIManagerのスクリプト取得
-        changeButtonTypes = UIManager.GetComponent<UIManager>();
+        // Button Managerのスクリプト取得
+        changeButtonTypes = buttonManager.GetComponent<ButtonManager>();
     }
 
     public void onClick()
