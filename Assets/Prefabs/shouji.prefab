@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 6157669107096344158}
   m_Layer: 0
   m_Name: shouji
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

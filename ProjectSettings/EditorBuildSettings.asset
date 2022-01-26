@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Opening.unity
-    guid: 49bd8550b5748d14e8a5f978f9dc50e7
+    path: Assets/Scenes/Opening_Enemy.unity
+    guid: 9999f7e12a2d27e44b021cb6779ebb2d
   - enabled: 1
-    path: Assets/Scenes/main.unity
-    guid: 7ee0ac0b4b2ed064fb87554ea4bc46f6
+    path: Assets/Scenes/vsEnemy.unity
+    guid: 583f9475c56946447ace78f99ff77db4
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: c382b12673fa4a442a5b4d950457262d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a4183b1df3bb81a4c8844829b18e7f03, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: be3594187e6d2ec42bc88ad3e8efe441, type: 2}

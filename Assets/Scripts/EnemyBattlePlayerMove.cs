@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class EnemyBattlePlayerMove : MonoBehaviour
 {
-    public GameObject kunai;
+    public GameObject kunaiPrefab;
     [SerializeField]
     private float kunaiSpeed = 60;
 
@@ -22,6 +22,9 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
     [SerializeField]
     private GameObject playerModel;
+
+    [SerializeField]
+    private GameObject kunaiInHand;
 
     // Start is called before the first frame update
     void Start()
@@ -81,10 +84,20 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "GunButton":
-                var obj = Instantiate(kunai, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
+                kunaiInHand.SetActive(false);
+                var obj = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
                 obj.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
+                StartCoroutine("DeleteKunai", obj);
                 break;
         }
 
+    }
+
+    IEnumerator DeleteKunai(GameObject kunai)
+    {
+        yield return new WaitForSeconds(5f);
+        Debug.Log(kunai);
+        Destroy(kunai);
+        kunaiInHand.SetActive(true);
     }
 }
