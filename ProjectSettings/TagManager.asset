@@ -7,6 +7,7 @@ TagManager:
   - UIManager
   - Weapon
   - Enemy
+  - Canvas
   layers:
   - Default
   - TransparentFX

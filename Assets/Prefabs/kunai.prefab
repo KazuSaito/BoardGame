@@ -194,8 +194,8 @@ Transform:
   m_GameObject: {fileID: 4983360884858900544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.07, y: 0.04, z: 0.08}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6620971987223628529}
   - {fileID: 1778026921398938928}
@@ -218,7 +218,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &-4474413175273235776
 CapsuleCollider:
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c72daeb40e3a4988f5d020d757184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!1 &6673553556844521874
 GameObject:
   m_ObjectHideFlags: 0
