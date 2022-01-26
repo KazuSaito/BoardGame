@@ -34,7 +34,7 @@ public class EnemyMove : MonoBehaviour
         {
             if (zDist > 3.0f)
             {
-                if (xOrz == 0)
+                if (xOrz > 2)
                 {
                     anim.SetTrigger("ForwardTrigger");
                     transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
@@ -54,6 +54,7 @@ public class EnemyMove : MonoBehaviour
                 }
             }
 
+            // ã‹L‚Æ‡˜‚ª‹t‚Ì‚Ù‚¤‚ªŽ©‘R‚¾‚ªA‚ ‚¦‚Ä‚±‚ê‚Å
             else if (xDist > 3.0f)
             {
                 if (this.transform.position.x < 2.0f)
@@ -85,6 +86,7 @@ public class EnemyMove : MonoBehaviour
         else
         {
             enemyKunaiInHand.SetActive(false);
+            anim.SetTrigger("ThrowTrigger");
             var obj = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 0, 0, 0));
             obj.GetComponent<Rigidbody>().AddForce(new Vector3(0.7f, 0, -enemyKunaiSpeed));
             StartCoroutine("DeleteKunai", obj);

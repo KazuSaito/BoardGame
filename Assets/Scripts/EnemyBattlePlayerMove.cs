@@ -80,11 +80,13 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "SwordButton":
-
+                playerAnim.SetTrigger("SwordTrigger");
+                // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも
                 break;
 
             case "GunButton":
                 kunaiInHand.SetActive(false);
+                playerAnim.SetTrigger("ThrowTrigger");
                 var obj = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
                 obj.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
                 StartCoroutine("DeleteKunai", obj);
