@@ -5,6 +5,14 @@ using DG.Tweening;
 
 public class EnemyMove : MonoBehaviour
 {
+    public GameObject enemyKunaiPrefab;
+    [SerializeField]
+    private float enemyKunaiSpeed = 60;
+    [SerializeField]
+    private GameObject enemyKunaiInHand;
+    [SerializeField]
+    private GameObject enemyRightHandIndex;
+
     [SerializeField]
     private GameObject player;
 
@@ -20,8 +28,7 @@ public class EnemyMove : MonoBehaviour
         // distance = Vector3.Distance(player.transform.position, transform.position);
         xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
         zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
-        int xOrz = Random.Range(0, 3);
-        Debug.Log(xOrz);
+        int xOrz = Random.Range(0, 9);
 
         if (xDist > 0.5f)
         {
@@ -75,5 +82,22 @@ public class EnemyMove : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            enemyKunaiInHand.SetActive(false);
+            var obj = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 0, 0, 0));
+            obj.GetComponent<Rigidbody>().AddForce(new Vector3(0.7f, 0, -enemyKunaiSpeed));
+            StartCoroutine("DeleteKunai", obj);
+        }
+    }
+
+    IEnumerator DeleteKunai(GameObject kunai)
+    {
+        yield return new WaitForSeconds(5f);
+        Debug.Log(kunai);
+        Destroy(kunai);
+        enemyKunaiInHand.SetActive(true);
     }
 }
+
+    

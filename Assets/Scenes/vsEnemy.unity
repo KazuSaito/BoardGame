@@ -267,6 +267,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907766452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 68912339372605818, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+  m_PrefabInstance: {fileID: 443592701533892133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &907766455
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907766452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1490496331
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095eab2a84095984297609fb125dfa1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyKunaiPrefab: {fileID: 4983360884858900544, guid: aedcef3a1b7b9ee4a85cc9f44e772719, type: 3}
+  enemyKunaiSpeed: 60
+  enemyKunaiInHand: {fileID: 4983360884177825252}
+  enemyRightHandIndex: {fileID: 2833529640138000782}
   player: {fileID: 482483302996289349}
   anim: {fileID: 6758489239275494235}
 --- !u!54 &1699894868
@@ -1129,6 +1152,10 @@ PrefabInstance:
     - target: {fileID: 42174207131683170, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 68912339372605818, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5141877262629661667, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: enemy

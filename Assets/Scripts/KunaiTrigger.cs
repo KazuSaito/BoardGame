@@ -9,14 +9,15 @@ public class KunaiTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        Debug.Log(other.tag);
-        if(other.CompareTag("Enemy"))
+        if (this.gameObject.name == "kunai")
         {
-            // 非アクティブ状態時はFindできない
-            GameObject canvas = GameObject.FindWithTag("Canvas");
-            canvas.GetComponent<CanvasManager>().WinLose();
-            StartCoroutine("LoadEndingScene");
+            if (other.CompareTag("Enemy"))
+            {
+                // 非アクティブ状態時はFindできない
+                GameObject canvas = GameObject.FindWithTag("Canvas");
+                canvas.GetComponent<CanvasManager>().WinLose();
+                StartCoroutine("LoadEndingScene");
+            }
         }
         else if (other.CompareTag("Player"))
         {
