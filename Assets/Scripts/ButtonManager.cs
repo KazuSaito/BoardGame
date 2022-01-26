@@ -25,6 +25,7 @@ public class ButtonManager : MonoBehaviour
     {
         actionButtons.SetActive(true);
         movementButtons.SetActive(false);
+        attackButtons.SetActive(false);
         playerMove = player.GetComponent<EnemyBattlePlayerMove>();
 
     }
@@ -57,6 +58,10 @@ public class ButtonManager : MonoBehaviour
                 case "GunButton":
                     StartCoroutine("visibleActionButtons", 1);
                     playerMove.PlayerMovement(clickedButtonName);
+                    break;
+
+                case "BackButton":
+                    StartCoroutine("visibleActionButtons", 1);
                     break;
 
                 default:

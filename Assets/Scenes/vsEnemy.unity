@@ -1082,10 +1082,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 42174206194946744, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 42174207131683168, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: m_Name
       value: Player for enemy battle
@@ -1138,14 +1134,6 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1585974138}
-    - target: {fileID: 5141877262629661667, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: kunaiSpeed
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415540186304787148, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_Constraints
-      value: 126
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
 --- !u!1 &482483302996289349 stripped
