@@ -19,6 +19,11 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    [SerializeField]
+    private AudioClip audioEnemySlash;
+    [SerializeField]
+    private AudioSource audioSource;
+
     private float xDist;
     private float zDist;
     private float distance;
@@ -78,8 +83,7 @@ public class EnemyMove : MonoBehaviour
                 }
                 else
                 {
-                    anim.SetTrigger("SwordTrigger");
-                    Debug.Log("Short Attack!");
+                    Invoke("EnemySwordAction", 2f);
                 }
             }
         }
@@ -106,6 +110,13 @@ public class EnemyMove : MonoBehaviour
         var kunai = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
         kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, -enemyKunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
+    }
+
+    private void EnemySwordAction ()
+    {
+        Debug.Log("Short Attack!");
+        anim.SetTrigger("SwordTrigger");
+        audioSource.PlayOneShot(audioEnemySlash);
     }
 }
 

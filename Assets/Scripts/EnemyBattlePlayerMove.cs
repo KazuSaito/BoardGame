@@ -26,6 +26,11 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private GameObject kunaiInHand;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip audioPlayerSlash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,8 +85,8 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "SwordButton":
-                playerAnim.SetTrigger("SwordTrigger");
-                // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも
+                Invoke("SwordAction", 2f);
+                // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも → クナイのcolliderで暫定的に判定できていそう
                 break;
 
             case "GunButton":
@@ -108,5 +113,11 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         var kunai = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
         kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
+    }
+
+    private void SwordAction ()
+    {
+        playerAnim.SetTrigger("SwordTrigger");
+        audioSource.PlayOneShot(audioPlayerSlash);
     }
 }
