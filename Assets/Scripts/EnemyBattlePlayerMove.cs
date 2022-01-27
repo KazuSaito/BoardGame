@@ -86,10 +86,9 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
             case "GunButton":
                 kunaiInHand.SetActive(false);
+                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
                 playerAnim.SetTrigger("ThrowTrigger");
-                var obj = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
-                obj.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
-                StartCoroutine("DeleteKunai", obj);
+                StartCoroutine("WaitKunaiThrowAnim");
                 break;
         }
 
@@ -97,9 +96,17 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
     IEnumerator DeleteKunai(GameObject kunai)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
         Debug.Log(kunai);
         Destroy(kunai);
         kunaiInHand.SetActive(true);
+    }
+
+    IEnumerator WaitKunaiThrowAnim ()
+    {
+        yield return new WaitForSeconds(1.5f);
+        var kunai = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
+        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
+        StartCoroutine("DeleteKunai", kunai);
     }
 }

@@ -1162,6 +1162,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 647872480, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: m_text
+      value: "\u30D7\u30EC\u30A4\u30E4\u30FC\n\u52DD\u5229\uFF01"
+      objectReference: {fileID: 0}
     - target: {fileID: 42174206183799668, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: EnableLinearMovement
       value: 0
