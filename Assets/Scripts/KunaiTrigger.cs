@@ -9,7 +9,8 @@ public class KunaiTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (this.gameObject.name == "kunai")
+        // ‚½‚Ü‚Éãè‚­”½‰‚µ‚È‚¢ƒoƒO‚ª”­¶‚·‚é‚Ì‚Å—vŒŸØ
+        if (this.gameObject.tag == "Weapon")
         {
             if (other.CompareTag("Enemy"))
             {
