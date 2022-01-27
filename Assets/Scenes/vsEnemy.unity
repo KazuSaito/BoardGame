@@ -1807,10 +1807,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2592667245179534286, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.67
-      objectReference: {fileID: 0}
     - target: {fileID: 2626082788801065356, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
       propertyPath: m_Name
       value: MainStage
@@ -1858,50 +1854,6 @@ PrefabInstance:
     - target: {fileID: 2626082788801065359, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082788872622668, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082788874314807, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082788924325686, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082788962474686, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082789029290884, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082789050421890, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082790238176507, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082790516166979, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626082790795589025, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8812989917671940323, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8812989918938031687, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
-      propertyPath: m_TagString
-      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e65cae66eb5c14d8b362907c6bc043, type: 3}
