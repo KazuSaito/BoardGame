@@ -16,13 +16,15 @@ public class KunaiTrigger : MonoBehaviour
             {
                 // 非アクティブ状態時はFindできない
                 GameObject canvas = GameObject.FindWithTag("Canvas");
-                canvas.GetComponent<CanvasManager>().WinLose();
+                canvas.GetComponent<CanvasManager>().Win();
                 StartCoroutine("LoadEndingScene");
             }
         }
         else if (other.CompareTag("Player"))
         {
-            Debug.Log("I lost...");
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            canvas.GetComponent<CanvasManager>().Lose();
+            StartCoroutine("LoadEndingScene");
         }
         // 厳密にはwallに当たった瞬間にクナイをDestroyすべき、ただし既存のものでは秒数で内部消去で実装
         // else if (other.CompareTag("Wall"))

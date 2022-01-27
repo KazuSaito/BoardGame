@@ -448,25 +448,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &907766452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 68912339372605818, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-  m_PrefabInstance: {fileID: 443592701533892133}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &907766455
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907766452}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1011119782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1343,46 +1324,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 238629586, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 647872480, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_text
-      value: "\u30D7\u30EC\u30A4\u30E4\u30FC\n\u52DD\u5229\uFF01"
-      objectReference: {fileID: 0}
-    - target: {fileID: 42174206183799668, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: EnableLinearMovement
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: fadeColor.b
-      value: 0.14719464
-      objectReference: {fileID: 0}
-    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: fadeColor.g
-      value: 0.13777143
-      objectReference: {fileID: 0}
-    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: fadeColor.r
-      value: 0.18867922
-      objectReference: {fileID: 0}
     - target: {fileID: 42174207131683168, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: m_Name
       value: Player for enemy battle
@@ -1430,10 +1371,6 @@ PrefabInstance:
     - target: {fileID: 42174207131683170, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 68912339372605818, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5141877262629661667, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: enemy
@@ -2862,9 +2799,10 @@ GameObject:
   - component: {fileID: 5648539771204450142}
   - component: {fileID: 8281543571033484937}
   - component: {fileID: 4748958860632090468}
+  - component: {fileID: 8281543571033484938}
   m_Layer: 0
   m_Name: kunai
-  m_TagString: Weapon
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3899,6 +3837,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8281543571033484938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983360884177825252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87c72daeb40e3a4988f5d020d757184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8367418875850200908
 Transform:
   m_ObjectHideFlags: 0
