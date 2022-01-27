@@ -18,6 +18,7 @@ public class EndingManager : MonoBehaviour
 
     private void FinishGame()
     {
+        // Oculus Link‚Å‚Í‚Å‚«‚È‚³‚»‚¤Abuild‚µ‚ÄŠm”F—\’è
         UnityEngine.Application.Quit();
     }
 }
