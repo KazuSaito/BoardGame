@@ -128,7 +128,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// When true, user input will be applied to linear movement. Set this to false whenever the player controller needs to ignore input for
 	/// linear movement.
 	/// </summary>
-	public bool EnableLinearMovement = true;
+	public bool EnableLinearMovement = false;
 
 	/// <summary>
 	/// When true, user input will be applied to rotation. Set this to false whenever the player controller needs to ignore input for rotation.

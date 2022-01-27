@@ -895,7 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayTransform: {fileID: 0}
   m_Cursor: {fileID: 114392412264457806}
-  joyPadClickButton: 1
+  joyPadClickButton: 2097155
   gazeClickKey: 32
   performSphereCastForGazepointer: 0
   useRightStickScroll: 1
@@ -1162,6 +1162,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 42174206183799668, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: EnableLinearMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: fadeColor.b
+      value: 0.14719464
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: fadeColor.g
+      value: 0.13777143
+      objectReference: {fileID: 0}
+    - target: {fileID: 42174206183941132, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
+      propertyPath: fadeColor.r
+      value: 0.18867922
+      objectReference: {fileID: 0}
     - target: {fileID: 42174207131683168, guid: 8399a157f26db9a4a9b5acb2f5f47c49, type: 3}
       propertyPath: m_Name
       value: Player for enemy battle
