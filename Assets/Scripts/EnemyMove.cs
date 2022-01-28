@@ -22,7 +22,12 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     private AudioClip audioEnemySlash;
     [SerializeField]
-    private AudioSource audioSource;
+    private AudioSource audioSourceEnemySlash;
+
+    [SerializeField]
+    private AudioClip audioEnemyMove;
+    [SerializeField]
+    private AudioSource audioSourceEnemyMove;
 
     private float xDist;
     private float zDist;
@@ -41,6 +46,7 @@ public class EnemyMove : MonoBehaviour
             {
                 if (xOrz > 2)
                 {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("ForwardTrigger");
                     transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
                 }
@@ -48,11 +54,13 @@ public class EnemyMove : MonoBehaviour
                 {
                     if (this.transform.position.x < 2.0f)
                     {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                         anim.SetTrigger("RightTrigger");
                         transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                     }
                     else
                     {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                         anim.SetTrigger("LeftTrigger");
                         transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                     }
@@ -64,11 +72,13 @@ public class EnemyMove : MonoBehaviour
             {
                 if (this.transform.position.x < 2.0f)
                 {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("RightTrigger");
                     transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                 }
                 else
                 {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("LeftTrigger");
                     transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                 }
@@ -78,6 +88,7 @@ public class EnemyMove : MonoBehaviour
             {
                 if (xOrz == 0)
                 {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("BackTrigger");
                     transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
                 }
@@ -116,7 +127,12 @@ public class EnemyMove : MonoBehaviour
     {
         Debug.Log("Short Attack!");
         anim.SetTrigger("SwordTrigger");
-        audioSource.PlayOneShot(audioEnemySlash);
+        Invoke("EnemySwordSound", 0.5f);
+    }
+
+    private void EnemySwordSound()
+    {
+        audioSourceEnemySlash.PlayOneShot(audioEnemySlash);
     }
 }
 

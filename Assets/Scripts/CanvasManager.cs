@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
+    public GameObject winPanel;
+    public GameObject losePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -14,18 +16,18 @@ public class CanvasManager : MonoBehaviour
 
     public void Win()
     {
-        this.transform.GetChild(0).gameObject.SetActive(true);
+        winPanel.SetActive(true);
     }
 
     public void Lose()
     {
-        this.transform.GetChild(1).gameObject.SetActive(true);
+        losePanel.SetActive(true);
     }
 
     private void HidePanel()
     {
-        this.transform.GetChild(0).gameObject.SetActive(false);
-        this.transform.GetChild(1).gameObject.SetActive(false);
+        winPanel.SetActive(false);
+        losePanel.SetActive(false);
     }
 
 }

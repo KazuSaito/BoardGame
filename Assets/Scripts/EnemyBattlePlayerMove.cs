@@ -27,9 +27,13 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     private GameObject kunaiInHand;
 
     [SerializeField]
-    private AudioSource audioSource;
+    private AudioSource audioSourceSlash;
     [SerializeField]
     private AudioClip audioPlayerSlash;
+    [SerializeField]
+    private AudioSource audioSourceMove;
+    [SerializeField]
+    private AudioClip audioPlayerMove;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 if (this.transform.position.z > -1.5f)
                 {
                     playerAnim.SetTrigger("ForwardTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0, 0, -0.5f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
@@ -58,6 +63,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 if (this.transform.position.z < 0)
                 {
                     playerAnim.SetTrigger("BackTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0, 0, 0.5f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
@@ -68,6 +74,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 if (this.transform.position.x < 0)
                 {
                     playerAnim.SetTrigger("LeftTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0.5f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
@@ -78,6 +85,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 if (this.transform.position.x > -1.5f)
                 {
                     playerAnim.SetTrigger("RightTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(-0.5f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
@@ -118,6 +126,11 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     private void SwordAction ()
     {
         playerAnim.SetTrigger("SwordTrigger");
-        audioSource.PlayOneShot(audioPlayerSlash);
+        Invoke("SwordSound", 0.5f);      
+    }
+
+    private void SwordSound()
+    {
+        audioSourceSlash.PlayOneShot(audioPlayerSlash);
     }
 }

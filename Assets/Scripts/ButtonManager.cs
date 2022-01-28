@@ -34,7 +34,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (clickedButtonName.Contains("Move"))
         {
-            StartCoroutine("visibleActionButtons", 1);
+            StartCoroutine("visibleActionButtons", 3);
             playerMove.PlayerMovement(clickedButtonName);
         }
 
@@ -51,12 +51,12 @@ public class ButtonManager : MonoBehaviour
                     break;
 
                 case "SwordButton":
-                    StartCoroutine("visibleActionButtons", 1);
+                    StartCoroutine("visibleActionButtons", 3);
                     playerMove.PlayerMovement(clickedButtonName);
                     break;
 
                 case "GunButton":
-                    StartCoroutine("visibleActionButtons", 1);
+                    StartCoroutine("visibleActionButtons", 3);
                     playerMove.PlayerMovement(clickedButtonName);
                     break;
 
