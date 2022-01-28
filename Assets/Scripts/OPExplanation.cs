@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class OPExplanation : MonoBehaviour
 {
+    [Header ("Audio Settings")]
+
+    [SerializeField]
+    private AudioSource buttonSource;
+    [SerializeField]
+    private AudioClip clickedSound;
+
+    [Header ("Panel Settings")]
+
     [SerializeField]
     private GameObject EnterGamePanel;
 
@@ -25,12 +34,14 @@ public class OPExplanation : MonoBehaviour
 
     public void OpenRulePanel()
     {
+        buttonSource.PlayOneShot(clickedSound);
         RulePanel.SetActive(true);
         EnterGamePanel.SetActive(false);
     }
 
     public void OpenStartPanel()
     {
+        buttonSource.PlayOneShot(clickedSound);
         StartPanel.SetActive(true);
         RulePanel.SetActive(false);
     }
