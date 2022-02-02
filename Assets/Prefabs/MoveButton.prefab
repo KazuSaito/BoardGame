@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4803755709083603364}
   - component: {fileID: 4803755709083603371}
   - component: {fileID: 4803755709083603370}
-  - component: {fileID: 4803755709083603365}
+  - component: {fileID: -3347919371131243456}
   m_Layer: 5
   m_Name: MoveButton
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4803755709083603365}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Clicked, Assembly-CSharp
         m_MethodName: onClick
         m_Mode: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4803755709083603365
+--- !u!114 &-3347919371131243456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,9 +144,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4803755709083603368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcfb3e784bd15cc4b9ec9243403c553b, type: 3}
+  m_Script: {fileID: 11500000, guid: bbe8a93e50274c14fb20092493a20f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  movementButtons: {fileID: 0}
+  changeButtonTypes: {fileID: 0}
 --- !u!1 &4803755710159573370
 GameObject:
   m_ObjectHideFlags: 0
