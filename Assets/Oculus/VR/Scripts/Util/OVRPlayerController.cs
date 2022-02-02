@@ -133,7 +133,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// <summary>
 	/// When true, user input will be applied to rotation. Set this to false whenever the player controller needs to ignore input for rotation.
 	/// </summary>
-	public bool EnableRotation = true;
+	public bool EnableRotation = false;
 
 	/// <summary>
 	/// Rotation defaults to secondary thumbstick. You can allow either here. Note that this won't behave well if EnableLinearMovement is true.

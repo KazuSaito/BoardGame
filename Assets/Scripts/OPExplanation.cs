@@ -50,4 +50,9 @@ public class OPExplanation : MonoBehaviour
     {
         SceneManager.LoadScene("vsEnemy");
     }
+
+    public void StartPhoton()
+    {
+        SceneManager.LoadScene("Opening_Photon");
+    }
 }
