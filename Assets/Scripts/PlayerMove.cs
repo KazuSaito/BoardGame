@@ -5,17 +5,17 @@ using DG.Tweening;
 
 public class PlayerMove : MonoBehaviour
 {
-    public GameObject kunai;
+    public GameObject kunaiPrefab;
+    [SerializeField]
+    private float kunaiSpeed = 60;
 
-    private float positionY = 1.0f;
-
-    private float posChange = 0.5f;
-
-    private int isMaster = 1;
 
     [SerializeField]
     private GameObject enemy;
     private EnemyMove enemyMove;
+
+    [SerializeField]
+    private GameObject rightHandIndex;
 
     [SerializeField]
     private Animator playerAnim;
@@ -24,13 +24,22 @@ public class PlayerMove : MonoBehaviour
     private GameObject playerModel;
 
     [SerializeField]
-    private GameObject rightHandIndex;
+    private GameObject kunaiInHand;
+
+    [SerializeField]
+    private AudioSource audioSourceSlash;
+    [SerializeField]
+    private AudioClip audioPlayerSlash;
+    [SerializeField]
+    private AudioSource audioSourceMove;
+    [SerializeField]
+    private AudioClip audioPlayerMove;
+
+    private int isMaster;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Photon利用の場合はinstantiate側で初期位置設定のため以下の一文は不要
-        // this.transform.position = new Vector3(0, 0, 0);
         // enemyはinstantiateされた後に検索する必要があるので要変更
         // enemyMove = enemy.GetComponent<EnemyMove>();
     }
@@ -47,6 +56,7 @@ public class PlayerMove : MonoBehaviour
                 if (this.transform.position.z > -1.5f)
                 {
                     playerAnim.SetTrigger("ForwardTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0, 0, -0.5f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
@@ -59,6 +69,7 @@ public class PlayerMove : MonoBehaviour
                 if (this.transform.position.z < 0)
                 {
                     playerAnim.SetTrigger("BackTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0, 0, 0.5f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
@@ -70,6 +81,7 @@ public class PlayerMove : MonoBehaviour
                 if (this.transform.position.x < 0)
                 {
                     playerAnim.SetTrigger("LeftTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(0.5f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
@@ -81,6 +93,7 @@ public class PlayerMove : MonoBehaviour
                 if (this.transform.position.x > -1.5f)
                 {
                     playerAnim.SetTrigger("RightTrigger");
+                    audioSourceMove.PlayOneShot(audioPlayerMove);
                     Tween tween = transform.DOMove(new Vector3(-0.5f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
@@ -89,15 +102,45 @@ public class PlayerMove : MonoBehaviour
                 break;
 
             case "SwordButton":
-
+                Invoke("SwordAction", 2f);
+                // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも → クナイのcolliderで暫定的に判定できていそう
                 break;
 
             case "GunButton":
-                var obj = Instantiate(kunai, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
-                obj.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 30));
+                kunaiInHand.SetActive(false);
+                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+                playerAnim.SetTrigger("ThrowTrigger");
+                StartCoroutine("WaitKunaiThrowAnim");
                 break;
         }
 
+    }
+
+    IEnumerator DeleteKunai(GameObject kunai)
+    {
+        yield return new WaitForSeconds(7f);
+        Debug.Log(kunai);
+        Destroy(kunai);
+        kunaiInHand.SetActive(true);
+    }
+
+    IEnumerator WaitKunaiThrowAnim()
+    {
+        yield return new WaitForSeconds(1.5f);
+        var kunai = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
+        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
+        StartCoroutine("DeleteKunai", kunai);
+    }
+
+    private void SwordAction()
+    {
+        playerAnim.SetTrigger("SwordTrigger");
+        Invoke("SwordSound", 0.5f);
+    }
+
+    private void SwordSound()
+    {
+        audioSourceSlash.PlayOneShot(audioPlayerSlash);
     }
 
     public void IsMaster(bool playerOrder)
