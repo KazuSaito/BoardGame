@@ -6,7 +6,7 @@ using TMPro;
 
 public class LevelUIMove : MonoBehaviour
 {
-    public int level;
+    public static int level = 1;
     [SerializeField] private TextMeshProUGUI txt;
 
     // Start is called before the first frame update

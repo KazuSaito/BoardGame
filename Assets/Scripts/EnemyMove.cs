@@ -21,7 +21,6 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private AudioClip audioEnemyMove;
     [SerializeField] private AudioSource audioSourceEnemyMove;
 
-    [SerializeField] private LevelUIMove levelManager;
     private int enemyLevel;
 
     private float xDist;
@@ -30,7 +29,7 @@ public class EnemyMove : MonoBehaviour
 
     private void Start()
     {
-        enemyLevel = levelManager.level;
+        enemyLevel = LevelUIMove.level;
     }
 
     public void EnemyAction()
