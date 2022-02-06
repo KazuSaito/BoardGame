@@ -16,6 +16,8 @@ public class CanvasManager : MonoBehaviour
 
     public void Win()
     {
+        GameObject levelManager = GameObject.FindWithTag("LevelMg");
+        levelManager.GetComponent<LevelUIMove>().LevelUp();
         StartCoroutine("WinLosePanel", winPanel);
     }
 

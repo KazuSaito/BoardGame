@@ -131,8 +131,10 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         yield return new WaitForSeconds(2f);
         playerAnim.SetTrigger("SwordTrigger");
         Invoke("SwordSound", 0.5f);
-        float xDist = Mathf.Abs(transform.position.x + enemy.transform.position.x);
-        float zDist = Mathf.Abs(transform.position.z + enemy.transform.position.z);
+        float xDist = Mathf.Abs(transform.position.x * 4 + enemy.transform.position.x);
+        float zDist = Mathf.Abs(transform.position.z * 4 + enemy.transform.position.z);
+        Debug.Log(transform.position.z);
+        Debug.Log(enemy.transform.position.z);
         Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
         if (xDist < 5.0f && zDist < 3.0f)
         {

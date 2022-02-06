@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 110503066}
   m_Layer: 5
   m_Name: LevelCanvas
-  m_TagString: Untagged
+  m_TagString: LevelMg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1440,6 +1440,7 @@ MonoBehaviour:
   audioSourceEnemySlash: {fileID: 8281543571033484939}
   audioEnemyMove: {fileID: 8300000, guid: 08e299423e651b9438ddcae450921db4, type: 3}
   audioSourceEnemyMove: {fileID: 6137547259938428517}
+  levelManager: {fileID: 110503066}
 --- !u!54 &1699894868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1454,7 +1455,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 36
   m_CollisionDetection: 0
 --- !u!136 &1699894869
 CapsuleCollider:

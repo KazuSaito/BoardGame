@@ -35,5 +35,12 @@ public class LevelUIMove : MonoBehaviour
         txt.gameObject.SetActive(false);
     }
 
+    public void LevelUp()
+    {
+        Debug.Log($"Before level: {level}");
+        level += 1;
+        Debug.Log($"After level: {level}");
+    }
+
 
 }

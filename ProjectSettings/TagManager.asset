@@ -10,6 +10,7 @@ TagManager:
   - Canvas
   - Wall
   - EnemyWeapon
+  - LevelMg
   layers:
   - Default
   - TransparentFX
