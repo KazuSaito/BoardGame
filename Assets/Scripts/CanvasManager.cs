@@ -16,18 +16,24 @@ public class CanvasManager : MonoBehaviour
 
     public void Win()
     {
-        winPanel.SetActive(true);
+        StartCoroutine("WinLosePanel", winPanel);
     }
 
     public void Lose()
     {
-        losePanel.SetActive(true);
+        StartCoroutine("WinLosePanel", losePanel);
     }
 
     private void HidePanel()
     {
         winPanel.SetActive(false);
         losePanel.SetActive(false);
+    }
+
+    IEnumerator WinLosePanel(GameObject panel)
+    {
+        yield return new WaitForSeconds(1f);
+        panel.SetActive(true);
     }
 
 }

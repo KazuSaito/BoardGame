@@ -36,8 +36,8 @@ public class EnemyMove : MonoBehaviour
     public void EnemyAction()
     {
         // distance = Vector3.Distance(player.transform.position, transform.position);
-        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
+        xDist = Mathf.Abs(transform.position.x + player.transform.position.x);
+        zDist = Mathf.Abs(transform.position.z + player.transform.position.z);
         int xOrz = Random.Range(0, 9);
 
         if (xDist > 0.5f)
@@ -118,21 +118,33 @@ public class EnemyMove : MonoBehaviour
     IEnumerator WaitKunaiThrowAnim()
     {
         yield return new WaitForSeconds(1.5f);
-        var kunai = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
+        var kunai = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 0, 0, 0));
         kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, -enemyKunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
     }
 
-    private void EnemySwordAction ()
+    private void EnemySwordAction()
     {
-        Debug.Log("Short Attack!");
-        anim.SetTrigger("SwordTrigger");
-        Invoke("EnemySwordSound", 0.5f);
+        StartCoroutine("EnemySwordAttack");
     }
 
     private void EnemySwordSound()
     {
         audioSourceEnemySlash.PlayOneShot(audioEnemySlash);
+    }
+
+    IEnumerator EnemySwordAttack()
+    {
+        yield return new WaitForSeconds(2f);
+        anim.SetTrigger("SwordTrigger");
+        Invoke("EnemySwordSound", 0.5f);
+        Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
+        if (xDist < 5.0f && zDist < 3.0f)
+        {
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            canvas.GetComponent<CanvasManager>().Win();
+            StartCoroutine("LoadEndingScene");
+        }
     }
 }
 

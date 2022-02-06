@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class EnemyBattlePlayerMove : MonoBehaviour
 {
@@ -93,8 +94,10 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "SwordButton":
-                Invoke("SwordAction", 2f);
+                StartCoroutine("SwordAction");
                 // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも → クナイのcolliderで暫定的に判定できていそう
+                // particle等のeffectで攻撃範囲を視覚的によりわかりやすくする
+                
                 break;
 
             case "GunButton":
@@ -123,14 +126,30 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         StartCoroutine("DeleteKunai", kunai);
     }
 
-    private void SwordAction ()
+    IEnumerator SwordAction ()
     {
+        yield return new WaitForSeconds(2f);
         playerAnim.SetTrigger("SwordTrigger");
-        Invoke("SwordSound", 0.5f);      
+        Invoke("SwordSound", 0.5f);
+        float xDist = Mathf.Abs(transform.position.x + enemy.transform.position.x);
+        float zDist = Mathf.Abs(transform.position.z + enemy.transform.position.z);
+        Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
+        if (xDist < 5.0f && zDist < 3.0f)
+        {
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            canvas.GetComponent<CanvasManager>().Win();
+            StartCoroutine("LoadEndingScene");
+        }
     }
 
     private void SwordSound()
     {
         audioSourceSlash.PlayOneShot(audioPlayerSlash);
+    }
+
+    private IEnumerator LoadEndingScene()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Ending");
     }
 }
