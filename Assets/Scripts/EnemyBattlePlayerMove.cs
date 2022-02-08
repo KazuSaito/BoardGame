@@ -44,6 +44,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private Renderer playerModelVisibility;
 
+    // 主観と客観を確認する変数
     private bool subjective;
 
     // Start is called before the first frame update
@@ -54,7 +55,8 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         playerCamera.transform.position = new Vector3(0, 1.8f, -0.45f);
         playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
         subjective = false;
-        GetComponent<OVRPlayerController>().enabled = false;
+        // 子要素にあるOVRPlayerのOVRPlayerControllerコンポーネントを非アクティブにする
+        GetComponentInChildren<OVRPlayerController>().enabled = false;
     }
 
     public void PlayerMovement (string movementName)
