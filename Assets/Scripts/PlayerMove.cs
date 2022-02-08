@@ -9,11 +9,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float kunaiSpeed = 60;
 
-
-    [SerializeField]
-    private GameObject enemy;
-    private EnemyMove enemyMove;
-
     [SerializeField]
     private GameObject rightHandIndex;
 
@@ -26,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private GameObject kunaiInHand;
 
+    [Header("AudioSettings")]
     [SerializeField]
     private AudioSource audioSourceSlash;
     [SerializeField]
@@ -35,6 +31,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private AudioClip audioPlayerMove;
 
+    [Header("ChangeViewpoint")]
+    [SerializeField]
+    private GameObject playerCamera;
+
+    [SerializeField]
+    private Renderer playerModelVisibility;
+
+    private bool subjective;
+
     private int isMaster;
 
     // Start is called before the first frame update
@@ -42,6 +47,13 @@ public class PlayerMove : MonoBehaviour
     {
         // enemyはinstantiateされた後に検索する必要があるので要変更
         // enemyMove = enemy.GetComponent<EnemyMove>();
+
+        this.transform.position = new Vector3(0, 0, 0);
+        // enemyMove = enemy.GetComponent<EnemyMove>();
+        playerCamera.transform.position = new Vector3(0, 1.8f, -0.45f);
+        playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
+        subjective = false;
+        GetComponent<OVRPlayerController>().enabled = false;
     }
 
     public void PlayerMovement (string movementName)
@@ -104,9 +116,9 @@ public class PlayerMove : MonoBehaviour
             case "SwordButton":
                 Invoke("SwordAction", 2f);
                 // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも → クナイのcolliderで暫定的に判定できていそう
-                float xDist = Mathf.Abs(transform.position.x - enemy.transform.position.x);
-                float zDist = Mathf.Abs(transform.position.z - enemy.transform.position.z);
-                Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
+                // float xDist = Mathf.Abs(transform.position.x - enemy.transform.position.x);
+                // float zDist = Mathf.Abs(transform.position.z - enemy.transform.position.z);
+                // Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
                 break;
 
             case "GunButton":

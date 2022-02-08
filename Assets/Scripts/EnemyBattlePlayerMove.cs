@@ -10,7 +10,6 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private float kunaiSpeed = 60;
 
-
     [SerializeField]
     private GameObject enemy;
     private EnemyMove enemyMove;
@@ -55,6 +54,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         playerCamera.transform.position = new Vector3(0, 1.8f, -0.45f);
         playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
         subjective = false;
+        GetComponent<OVRPlayerController>().enabled = false;
     }
 
     public void PlayerMovement (string movementName)

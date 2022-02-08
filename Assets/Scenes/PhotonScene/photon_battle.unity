@@ -8397,6 +8397,8 @@ MonoBehaviour:
   audioPlayerSlash: {fileID: 8300000, guid: 1fe3aa5a0f84f5540913940b6edb40d2, type: 3}
   audioSourceMove: {fileID: 1272937575}
   audioPlayerMove: {fileID: 8300000, guid: 08e299423e651b9438ddcae450921db4, type: 3}
+  playerCamera: {fileID: 0}
+  playerModelVisibility: {fileID: 0}
 --- !u!4 &4740219195116885361
 Transform:
   m_ObjectHideFlags: 0
@@ -12653,7 +12655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482483301004636802, guid: b3e46f4f31a021d4180cf4f373a37cfd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1881170290863864296, guid: b3e46f4f31a021d4180cf4f373a37cfd, type: 3}
       propertyPath: sceneViewId
