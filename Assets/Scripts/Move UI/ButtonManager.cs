@@ -64,6 +64,11 @@ public class ButtonManager : MonoBehaviour
                     StartCoroutine("visibleActionButtons", 1);
                     break;
 
+                case "ChangeViewpointButton":
+                    Debug.Log("Clicked Change Viewpoint button");
+                    playerMove.ChangeViewpoint();
+                    break;
+
                 default:
                     break;
             }

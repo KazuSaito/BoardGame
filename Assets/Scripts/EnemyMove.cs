@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -77,7 +78,7 @@ public class EnemyMove : MonoBehaviour
         if (xDist < 5.0f && zDist < 3.0f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
-            canvas.GetComponent<CanvasManager>().Win();
+            canvas.GetComponent<CanvasManager>().Lose();
             StartCoroutine("LoadEndingScene");
         }
     }
@@ -87,7 +88,15 @@ public class EnemyMove : MonoBehaviour
         audioSourceEnemySlash.PlayOneShot(audioEnemySlash);
     }
 
+    private IEnumerator LoadEndingScene()
+    {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Ending");
+    }
+
     #endregion
+
+    #region LevelSettings
 
     private void LevelOne()
     {
@@ -197,6 +206,8 @@ public class EnemyMove : MonoBehaviour
             StartCoroutine("WaitKunaiThrowAnim");
         }
     }
+
+    #endregion
 }
 
 

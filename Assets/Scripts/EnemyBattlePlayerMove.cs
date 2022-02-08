@@ -15,6 +15,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     private GameObject enemy;
     private EnemyMove enemyMove;
 
+    [Header ("AnimSettings")]
     [SerializeField]
     private GameObject rightHandIndex;
 
@@ -27,6 +28,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private GameObject kunaiInHand;
 
+    [Header ("AudioSettings")]
     [SerializeField]
     private AudioSource audioSourceSlash;
     [SerializeField]
@@ -36,11 +38,23 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private AudioClip audioPlayerMove;
 
+    [Header ("ChangeViewpoint")]
+    [SerializeField]
+    private GameObject playerCamera;
+
+    [SerializeField]
+    private Renderer playerModelVisibility;
+
+    private bool subjective;
+
     // Start is called before the first frame update
     void Start()
     {
         this.transform.position = new Vector3(0, 0, 0);
         enemyMove = enemy.GetComponent<EnemyMove>();
+        playerCamera.transform.position = new Vector3(0, 1.8f, -0.45f);
+        playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
+        subjective = false;
     }
 
     public void PlayerMovement (string movementName)
@@ -50,44 +64,45 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         switch (movementName)
         {
             case "TopMoveButton":
-                if (this.transform.position.z > -1.5f)
+                if (this.transform.position.z < 6.0f)
                 {
                     playerAnim.SetTrigger("ForwardTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(0, 0, -0.5f), 3f).SetRelative();
+                    // OVR player Controller‚Æ‚Ì‘Š«‚É‚æ‚è—lX‚È•s‹ï‡‚ª”­¶‚µ‚Ä‚¢‚é
+                    Tween tween = transform.DOMove(new Vector3(0, 0, 2.0f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
                 }
                 break;
 
             case "DownMoveButton":
-                if (this.transform.position.z < 0)
+                if (this.transform.position.z > 1.0f)
                 {
                     playerAnim.SetTrigger("BackTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(0, 0, 0.5f), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(0, 0, -2f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
                 }
                 break;
 
             case "LeftMoveButton":
-                if (this.transform.position.x < 0)
+                if (this.transform.position.x > 1.0f)
                 {
                     playerAnim.SetTrigger("LeftTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(0.5f, 0, 0), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(-2f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                 }
                 break;
 
             case "RightMoveButton":
-                if (this.transform.position.x > -1.5f)
+                if (this.transform.position.x < 6.0f)
                 {
                     playerAnim.SetTrigger("RightTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(-0.5f, 0, 0), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(2f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                 }
@@ -110,6 +125,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
     }
 
+    #region Attack Action Coroutine
     IEnumerator DeleteKunai(GameObject kunai)
     {
         yield return new WaitForSeconds(7f);
@@ -153,5 +169,26 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Ending");
+    }
+
+#endregion
+
+    public void ChangeViewpoint()
+    {
+        if (!subjective)
+        {
+            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, 1.8f, 0);
+            playerModelVisibility.enabled = false;
+            kunaiInHand.SetActive(false);
+            subjective = true;
+        }
+        else if (subjective)
+        {
+            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, 1.8f, -0.45f);
+            playerModelVisibility.enabled = true;
+            kunaiInHand.SetActive(true);
+            subjective = false;
+        }
+        
     }
 }
