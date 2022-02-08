@@ -6,6 +6,7 @@ using TMPro;
 
 public class ButtonManager : MonoBehaviour
 {
+    [Header ("Button Panel")]
     [SerializeField]
     private GameObject actionButtons;
 
@@ -15,10 +16,19 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject attackButtons;
 
+    [Header ("Kunai")]
+    [SerializeField]
+    private GameObject kunaiButton;
+    public TextMeshProUGUI kunaiText;
+
     [SerializeField]
     private GameObject player;
 
     private EnemyBattlePlayerMove playerMove;
+
+    
+
+    private int kunaiRemain = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +36,9 @@ public class ButtonManager : MonoBehaviour
         actionButtons.SetActive(true);
         movementButtons.SetActive(false);
         attackButtons.SetActive(false);
+        kunaiButton.SetActive(true);
         playerMove = player.GetComponent<EnemyBattlePlayerMove>();
+        kunaiText.text = "クナイ投げ 残:2";
 
     }
 
@@ -58,6 +70,7 @@ public class ButtonManager : MonoBehaviour
                 case "GunButton":
                     StartCoroutine("visibleActionButtons", 3);
                     playerMove.PlayerMovement(clickedButtonName);
+                    kunaiInvisible();
                     break;
 
                 case "BackButton":
@@ -65,7 +78,6 @@ public class ButtonManager : MonoBehaviour
                     break;
 
                 case "ChangeViewpointButton":
-                    Debug.Log("Clicked Change Viewpoint button");
                     playerMove.ChangeViewpoint();
                     break;
 
@@ -97,5 +109,15 @@ public class ButtonManager : MonoBehaviour
         yield return new WaitForSeconds(num);
         actionButtons.SetActive(true);
         
+    }
+
+    public void kunaiInvisible()
+    {
+        kunaiRemain = playerMove.KunaiRemaining();
+        kunaiText.text = "クナイ投げ 残:" + kunaiRemain;
+        if (kunaiRemain <= 0)
+        {
+            kunaiButton.SetActive(false);
+        }
     }
 }

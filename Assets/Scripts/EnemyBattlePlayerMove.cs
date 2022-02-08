@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemyBattlePlayerMove : MonoBehaviour
 {
+    [Header ("Kunai Settings")]
     public GameObject kunaiPrefab;
     [SerializeField]
     private float kunaiSpeed = 60;
+    [SerializeField]
+    private int kunaiRemain;
 
     [SerializeField]
     private GameObject enemy;
@@ -57,6 +60,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         subjective = false;
         // 子要素にあるOVRPlayerのOVRPlayerControllerコンポーネントを非アクティブにする
         GetComponentInChildren<OVRPlayerController>().enabled = false;
+        kunaiRemain = 2;
     }
 
     public void PlayerMovement (string movementName)
@@ -118,10 +122,16 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "GunButton":
-                kunaiInHand.SetActive(false);
-                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
-                playerAnim.SetTrigger("ThrowTrigger");
-                StartCoroutine("WaitKunaiThrowAnim");
+                if (kunaiRemain > 0)
+                {
+                    kunaiInHand.SetActive(false);
+                    // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+                    playerAnim.SetTrigger("ThrowTrigger");
+                    StartCoroutine("WaitKunaiThrowAnim");
+                    kunaiRemain -= 1;
+                    Debug.Log(kunaiRemain);
+                }
+                
                 break;
         }
 
@@ -192,5 +202,11 @@ public class EnemyBattlePlayerMove : MonoBehaviour
             subjective = false;
         }
         
+    }
+
+    public int KunaiRemaining()
+    {
+        Debug.Log(kunaiRemain);
+        return kunaiRemain;
     }
 }

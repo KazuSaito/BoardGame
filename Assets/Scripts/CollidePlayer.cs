@@ -9,7 +9,6 @@ public class CollidePlayer : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Collide players");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

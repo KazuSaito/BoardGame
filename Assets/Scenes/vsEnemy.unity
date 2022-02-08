@@ -4199,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &482483301049113973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6206,7 +6206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &482483302473412083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7620,6 +7620,8 @@ MonoBehaviour:
   actionButtons: {fileID: 482483301049113962}
   movementButtons: {fileID: 482483300967248159}
   attackButtons: {fileID: 482483302473412080}
+  kunaiButton: {fileID: 4906810728040785816}
+  kunaiText: {fileID: 4906810729107842884}
   player: {fileID: 482483302996289349}
 --- !u!1 &1972597962888025665
 GameObject:
@@ -12207,6 +12209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kunaiPrefab: {fileID: 4983360884858900544, guid: 5d5949238a256d8418a389d365af6e00, type: 3}
   kunaiSpeed: 60
+  kunaiRemain: 0
   enemy: {fileID: 1585974138}
   rightHandIndex: {fileID: 1426252115859624033}
   playerAnim: {fileID: 443592702589690142}
@@ -12940,7 +12943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30AF\u30CA\u30A4\u6295\u3052"
+  m_text: "\u30AF\u30CA\u30A4\u6295\u3052 \u6B8B:2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3d042dc3385ab14f8da5e486d7bfe29, type: 2}
   m_sharedMaterial: {fileID: -7518604591907735479, guid: c3d042dc3385ab14f8da5e486d7bfe29, type: 2}
@@ -12967,8 +12970,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -13140,8 +13143,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
