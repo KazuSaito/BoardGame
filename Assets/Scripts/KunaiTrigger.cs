@@ -35,7 +35,8 @@ public class KunaiTrigger : MonoBehaviour
 
     private IEnumerator LoadEndingScene()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Load Ending");
         SceneManager.LoadScene("Ending");
     }
 }
