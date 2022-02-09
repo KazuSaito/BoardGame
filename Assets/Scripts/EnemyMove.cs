@@ -71,8 +71,9 @@ public class EnemyMove : MonoBehaviour
 
     IEnumerator EnemySwordAttack()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         anim.SetTrigger("SwordTrigger");
+        EnemySwordParticle();
         Invoke("EnemySwordSound", 0.5f);
         Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
         if (xDist < 5.0f && zDist < 3.0f)
@@ -95,6 +96,11 @@ public class EnemyMove : MonoBehaviour
     }
 
     #endregion
+
+    private void EnemySwordParticle()
+    {
+        enemyKunaiInHand.GetComponent<slashParticleEnemy>().EnemyKunaiParticleOn();
+    }
 
     #region LevelSettings
 

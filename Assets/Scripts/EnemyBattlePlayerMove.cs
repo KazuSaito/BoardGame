@@ -158,6 +158,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         playerAnim.SetTrigger("SwordTrigger");
+        SwordParticle();
         Invoke("SwordSound", 0.5f);
         float xDist = Mathf.Abs(transform.position.x * 4 + enemy.transform.position.x);
         float zDist = Mathf.Abs(transform.position.z * 4 + enemy.transform.position.z);
@@ -183,8 +184,9 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         SceneManager.LoadScene("Ending");
     }
 
-#endregion
+    #endregion
 
+    #region Public Function
     public void ChangeViewpoint()
     {
         if (!subjective)
@@ -209,4 +211,11 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         Debug.Log(kunaiRemain);
         return kunaiRemain;
     }
+
+    private void SwordParticle()
+    {
+        kunaiInHand.GetComponent<slashParticle>().ParticleOn();
+    }
+
+    #endregion
 }
