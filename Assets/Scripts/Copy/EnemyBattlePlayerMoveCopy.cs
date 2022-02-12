@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class EnemyBattlePlayerMove : MonoBehaviour
+public class EnemyBattlePlayerMoveCopy : MonoBehaviour
 {
     [Header ("Kunai Settings")]
     public GameObject kunaiPrefab;
@@ -30,10 +30,6 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private GameObject kunaiInHand;
 
-    private float transformMove = 0.4f;
-
-    [SerializeField] float transformY = 0.2f;
-
     [Header ("AudioSettings")]
     [SerializeField]
     private AudioSource audioSourceSlash;
@@ -57,64 +53,65 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.position = new Vector3(0, transformY, 0);
+        this.transform.position = new Vector3(0, 0, 0);
         enemyMove = enemy.GetComponent<EnemyMove>();
-        // playerCamera.transform.position = new Vector3(0, 1f, -0.3f);
-        // playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
+        playerCamera.transform.position = new Vector3(0, 1.8f, -0.45f);
+        playerCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
         subjective = false;
         // 子要素にあるOVRPlayerのOVRPlayerControllerコンポーネントを非アクティブにする
-        // GetComponentInChildren<OVRPlayerController>().enabled = false;
+        GetComponentInChildren<OVRPlayerController>().enabled = false;
         kunaiRemain = 2;
     }
 
+    /*
     public void PlayerMovement (string movementName)
     {
-        enemyMove.EnemyAction();
+        // enemyMove.EnemyAction();
 
         switch (movementName)
         {
             case "TopMoveButton":
-                if (this.transform.position.z < 1.2f)
+                if (this.transform.position.z < 6.0f)
                 {
                     playerAnim.SetTrigger("ForwardTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
                     // OVR player Controllerとの相性により様々な不具合が発生している
-                    Tween tween = transform.DOMove(new Vector3(0, 0, transformMove), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(0, 0, 2.0f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
-                    playerModel.transform.DOMove(new Vector3(0, 0, transformMove), 3f).SetRelative();
+                    playerModel.transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
                 }
                 break;
 
             case "DownMoveButton":
-                if (this.transform.position.z > 0.2f)
+                if (this.transform.position.z > 1.0f)
                 {
                     playerAnim.SetTrigger("BackTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(0, 0, -transformMove), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(0, 0, -2f), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
-                    playerModel.transform.DOMove(new Vector3(0, 0, -transformMove), 3f).SetRelative();
+                    playerModel.transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
                 }
                 break;
 
             case "LeftMoveButton":
-                if (this.transform.position.x > 0.2f)
+                if (this.transform.position.x > 1.0f)
                 {
                     playerAnim.SetTrigger("LeftTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(-transformMove, 0, 0), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(-2f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
-                    playerModel.transform.DOMove(new Vector3(-transformMove, 0, 0), 3f).SetRelative();
+                    playerModel.transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                 }
                 break;
 
             case "RightMoveButton":
-                if (this.transform.position.x < 1.2f)
+                if (this.transform.position.x < 6.0f)
                 {
                     playerAnim.SetTrigger("RightTrigger");
                     audioSourceMove.PlayOneShot(audioPlayerMove);
-                    Tween tween = transform.DOMove(new Vector3(transformMove, 0, 0), 3f).SetRelative();
+                    Tween tween = transform.DOMove(new Vector3(2f, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
-                    playerModel.transform.DOMove(new Vector3(transformMove, 0, 0), 3f).SetRelative();
+                    playerModel.transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                 }
                 break;
 
@@ -140,6 +137,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         }
 
     }
+    */
 
     #region Attack Action Coroutine
     IEnumerator DeleteKunai(GameObject kunai)
@@ -154,7 +152,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         var kunai = Instantiate(kunaiPrefab, rightHandIndex.transform.position, new Quaternion(0, 180, 0, 0));
-        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.15f, 0, kunaiSpeed));
+        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, kunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
     }
 
@@ -162,15 +160,14 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         playerAnim.SetTrigger("SwordTrigger");
-        yield return new WaitForSeconds(1.1f);
-        SwordParticle();
+        // SwordParticle();
         Invoke("SwordSound", 0.5f);
-        float xDist = Mathf.Abs(transform.position.x  - enemy.transform.position.x);
-        float zDist = Mathf.Abs(transform.position.z  - enemy.transform.position.z);
+        float xDist = Mathf.Abs(transform.position.x * 4 + enemy.transform.position.x);
+        float zDist = Mathf.Abs(transform.position.z * 4 + enemy.transform.position.z);
         Debug.Log(transform.position.z);
         Debug.Log(enemy.transform.position.z);
         Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
-        if (xDist < 0.8f && zDist < 0.8f)
+        if (xDist < 5.0f && zDist < 3.0f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Win();
@@ -191,7 +188,26 @@ public class EnemyBattlePlayerMove : MonoBehaviour
 
     #endregion
 
+    /*
     #region Public Function
+    public void ChangeViewpoint()
+    {
+        if (!subjective)
+        {
+            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, 1.8f, 0);
+            playerModelVisibility.enabled = false;
+            kunaiInHand.SetActive(false);
+            subjective = true;
+        }
+        else if (subjective)
+        {
+            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x, 1.8f, -0.45f);
+            playerModelVisibility.enabled = true;
+            kunaiInHand.SetActive(true);
+            subjective = false;
+        }
+        
+    }
 
     public int KunaiRemaining()
     {
@@ -205,4 +221,5 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     }
 
     #endregion
+    */
 }

@@ -5050,7 +5050,7 @@ GameObject:
   - component: {fileID: -4474413175273235776}
   - component: {fileID: 7893512140233720645}
   m_Layer: 0
-  m_Name: kunai
+  m_Name: kunai 1
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5065,7 +5065,7 @@ Transform:
   m_GameObject: {fileID: 4983360884858900544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014, y: 0.008, z: 0.016}
+  m_LocalScale: {x: 0.07, y: 0.04, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6620971987223628529}

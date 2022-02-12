@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMoveCopy : MonoBehaviour
 {
     [Header ("Kunai Settings")]
     public GameObject enemyKunaiPrefab;
@@ -16,8 +16,6 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private GameObject player;
 
     [SerializeField] private Animator anim;
-
-    private float enemyTransformMove = 0.4f;
 
     [Header ("Audio Settings")]
     [SerializeField] private AudioClip audioEnemySlash;
@@ -37,6 +35,7 @@ public class EnemyMove : MonoBehaviour
         enemyKunaiLeft = 2;
     }
 
+    /*
     public void EnemyAction()
     {
         switch (enemyLevel)
@@ -55,6 +54,7 @@ public class EnemyMove : MonoBehaviour
 
         
     }
+    */
 
     #region Coroutine Methods
     IEnumerator DeleteKunai(GameObject kunai)
@@ -69,19 +69,18 @@ public class EnemyMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         var kunai = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 0, 0, 0));
-        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.15f, 0, -enemyKunaiSpeed));
+        kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.7f, 0, -enemyKunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
     }
 
     IEnumerator EnemySwordAttack()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         anim.SetTrigger("SwordTrigger");
-        yield return new WaitForSeconds(1.1f);
         EnemySwordParticle();
         Invoke("EnemySwordSound", 0.5f);
         Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
-        if (xDist < 0.8f && zDist < 0.8f)
+        if (xDist < 5.0f && zDist < 3.0f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();
@@ -116,22 +115,22 @@ public class EnemyMove : MonoBehaviour
         zDist = Mathf.Abs(transform.position.z + player.transform.position.z);
         int xOrz = Random.Range(0, 9);
 
-        if (xDist > 0.8f)
+        if (xDist > 4.0f)
         {
-            if (this.transform.position.x < 0.4f)
+            if (this.transform.position.x < 2.0f)
             {
                 audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                 anim.SetTrigger("RightTrigger");
-                transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
             }
             else
             {
                 audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                 anim.SetTrigger("LeftTrigger");
-                transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
             }
         }
-        else if (zDist > 0.6f && enemyKunaiLeft >=1)
+        else if (zDist > 3.0f && enemyKunaiLeft >=1)
         {
             enemyKunaiInHand.SetActive(false);
             // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
@@ -143,14 +142,13 @@ public class EnemyMove : MonoBehaviour
         {
             StartCoroutine("EnemySwordAttack");
         }
-        Debug.Log(xDist + ":" + zDist);
     }
 
     private void LevelTwo()
     {
         // distance = Vector3.Distance(player.transform.position, transform.position);
-        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
+        xDist = Mathf.Abs(transform.position.x + player.transform.position.x);
+        zDist = Mathf.Abs(transform.position.z + player.transform.position.z);
         int xOrz = Random.Range(0, 9);
 
         if (xDist > 0.5f)
@@ -161,21 +159,21 @@ public class EnemyMove : MonoBehaviour
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("ForwardTrigger");
-                    transform.DOMove(new Vector3(0, 0, -enemyTransformMove), 3f).SetRelative();
+                    transform.DOMove(new Vector3(0, 0, -2), 3f).SetRelative();
                 }
                 else
                 {
-                    if (this.transform.position.x < 0.4f)
+                    if (this.transform.position.x < 2.0f)
                     {
                         audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                         anim.SetTrigger("RightTrigger");
-                        transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                        transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                     }
                     else
                     {
                         audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                         anim.SetTrigger("LeftTrigger");
-                        transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                        transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                     }
                 }
             }
@@ -183,17 +181,17 @@ public class EnemyMove : MonoBehaviour
             // 上記と順序が逆のほうが自然だが、あえてこれで
             else if (xDist > 3.0f)
             {
-                if (this.transform.position.x < 0.4f)
+                if (this.transform.position.x < 2.0f)
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("RightTrigger");
-                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                    transform.DOMove(new Vector3(2, 0, 0), 3f).SetRelative();
                 }
                 else
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("LeftTrigger");
-                    transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                    transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
                 }
             }
 
@@ -203,7 +201,7 @@ public class EnemyMove : MonoBehaviour
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("BackTrigger");
-                    transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                    transform.DOMove(new Vector3(0, 0, 2), 3f).SetRelative();
                 }
                 else
                 {

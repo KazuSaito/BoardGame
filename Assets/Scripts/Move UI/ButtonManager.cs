@@ -85,10 +85,6 @@ public class ButtonManager : MonoBehaviour
                     StartCoroutine("visibleActionButtons", 1);
                     break;
 
-                case "ChangeViewpointButton":
-                    playerMove.ChangeViewpoint();
-                    break;
-
                 default:
                     break;
             }
@@ -102,19 +98,19 @@ public class ButtonManager : MonoBehaviour
         yield return new WaitForSeconds(num);
         for (int i = 0; i < 4; i++)
             transformMoveButtons[i].gameObject.SetActive(true);  // 全移動ボタンを一度アクティブに
-        if (player.transform.position.z < 1.0f)  // 下移動ボタンの設定
+        if (player.transform.position.z < 0.2f)  // 下移動ボタンの設定
         {
             transformMoveButtons[1].gameObject.SetActive(false);
         }
-        if (player.transform.position.z > 5.0f)  // 上移動ボタンの設定
+        if (player.transform.position.z > 1.0f)  // 上移動ボタンの設定
         {
             transformMoveButtons[0].gameObject.SetActive(false);
         }
-        if (player.transform.position.x < 1.0f)  // 左移動ボタンの設定
+        if (player.transform.position.x < 0.2f)  // 左移動ボタンの設定
         {
             transformMoveButtons[2].gameObject.SetActive(false);
         }
-        if (player.transform.position.x > 5.0f)  // 右移動ボタンの設定
+        if (player.transform.position.x > 1.0f)  // 右移動ボタンの設定
         {
             transformMoveButtons[3].gameObject.SetActive(false);
         }
