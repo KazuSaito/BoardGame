@@ -106,7 +106,7 @@ public class ButtonManager : MonoBehaviour
         {
             transformMoveButtons[1].gameObject.SetActive(false);
         }
-        if (player.transform.position.z > 7.0f)  // 上移動ボタンの設定
+        if (player.transform.position.z > 5.0f)  // 上移動ボタンの設定
         {
             transformMoveButtons[0].gameObject.SetActive(false);
         }
@@ -114,7 +114,7 @@ public class ButtonManager : MonoBehaviour
         {
             transformMoveButtons[2].gameObject.SetActive(false);
         }
-        if (player.transform.position.x > 7.0f)  // 右移動ボタンの設定
+        if (player.transform.position.x > 5.0f)  // 右移動ボタンの設定
         {
             transformMoveButtons[3].gameObject.SetActive(false);
         }
