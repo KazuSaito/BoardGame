@@ -11,6 +11,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float enemyKunaiSpeed = 60;
     [SerializeField] private GameObject enemyKunaiInHand;
     [SerializeField] private GameObject enemyRightHandIndex;
+    private int enemyKunaiLeft;
 
     [SerializeField] private GameObject player;
 
@@ -31,6 +32,7 @@ public class EnemyMove : MonoBehaviour
     private void Start()
     {
         enemyLevel = LevelUIMove.level;
+        enemyKunaiLeft = 2;
     }
 
     public void EnemyAction()
@@ -126,12 +128,13 @@ public class EnemyMove : MonoBehaviour
                 transform.DOMove(new Vector3(-2, 0, 0), 3f).SetRelative();
             }
         }
-        else if (zDist > 3.0f)
+        else if (zDist > 3.0f && enemyKunaiLeft >=1)
         {
             enemyKunaiInHand.SetActive(false);
             // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
             anim.SetTrigger("ThrowTrigger");
             StartCoroutine("WaitKunaiThrowAnim");
+            enemyKunaiLeft -= 1;
         }
         else
         {
@@ -204,8 +207,11 @@ public class EnemyMove : MonoBehaviour
                 }
             }
         }
-        else
+        else 
         {
+            if (enemyKunaiLeft < 1)
+                return;
+
             enemyKunaiInHand.SetActive(false);
             // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
             anim.SetTrigger("ThrowTrigger");

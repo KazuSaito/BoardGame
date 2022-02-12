@@ -17245,10 +17245,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionButtons: {fileID: 482483301049113962}
   movementButtons: {fileID: 482483300967248159}
+  transformMoveButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   attackButtons: {fileID: 482483302473412080}
   kunaiButton: {fileID: 4906810728040785816}
   kunaiText: {fileID: 4906810729107842884}
   player: {fileID: 482483302996289349}
+  enemy: {fileID: 0}
 --- !u!1 &1972597962888025665
 GameObject:
   m_ObjectHideFlags: 0
@@ -27653,7 +27659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a31a50b29e1f3d4a99feeeecb8dfa4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyKunaiParticle: {fileID: 0}
+  enemyKunaiParticle: {fileID: 212412455}
 --- !u!54 &8281543572559928553
 Rigidbody:
   m_ObjectHideFlags: 0

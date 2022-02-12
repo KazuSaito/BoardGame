@@ -14,6 +14,9 @@ public class ButtonManager : MonoBehaviour
     private GameObject movementButtons;
 
     [SerializeField]
+    private GameObject[] transformMoveButtons;
+
+    [SerializeField]
     private GameObject attackButtons;
 
     [Header ("Kunai")]
@@ -24,6 +27,9 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    private GameObject enemy;
+
     private EnemyBattlePlayerMove playerMove;
 
     
@@ -33,13 +39,15 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < 4; i++)
+            transformMoveButtons[i] = movementButtons.transform.GetChild(i).gameObject;
         actionButtons.SetActive(true);
         movementButtons.SetActive(false);
         attackButtons.SetActive(false);
         kunaiButton.SetActive(true);
         playerMove = player.GetComponent<EnemyBattlePlayerMove>();
         kunaiText.text = "クナイ投げ 残:2";
-
+        
     }
 
     public void changeButtons (string clickedButtonName)
@@ -92,7 +100,26 @@ public class ButtonManager : MonoBehaviour
     {
         actionButtons.SetActive(false);
         yield return new WaitForSeconds(num);
+        for (int i = 0; i < 4; i++)
+            transformMoveButtons[i].gameObject.SetActive(true);  // 全移動ボタンを一度アクティブに
+        if (player.transform.position.z < 1.0f)  // 下移動ボタンの設定
+        {
+            transformMoveButtons[1].gameObject.SetActive(false);
+        }
+        if (player.transform.position.z > 7.0f)  // 上移動ボタンの設定
+        {
+            transformMoveButtons[0].gameObject.SetActive(false);
+        }
+        if (player.transform.position.x < 1.0f)  // 左移動ボタンの設定
+        {
+            transformMoveButtons[2].gameObject.SetActive(false);
+        }
+        if (player.transform.position.x > 7.0f)  // 右移動ボタンの設定
+        {
+            transformMoveButtons[3].gameObject.SetActive(false);
+        }
         movementButtons.SetActive(true);
+        
     }
 
     IEnumerator visibleAttackButtons (int num)
@@ -120,4 +147,5 @@ public class ButtonManager : MonoBehaviour
             kunaiButton.SetActive(false);
         }
     }
+
 }
