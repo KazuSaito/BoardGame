@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/vsEnemy.unity
     guid: 583f9475c56946447ace78f99ff77db4
   - enabled: 1
-    path: Assets/Scenes/PhotonScene/Opening_Photon.unity
-    guid: 49bd8550b5748d14e8a5f978f9dc50e7
-  - enabled: 1
-    path: Assets/Scenes/PhotonScene/photon_battle.unity
-    guid: 0c3ebc3dd55b35d4c90ee1a189322ba8
-  - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: c382b12673fa4a442a5b4d950457262d
   m_configObjects:
