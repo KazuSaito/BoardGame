@@ -51,6 +51,9 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     [SerializeField]
     private Renderer playerModelVisibility;
 
+    [Header("Others")]
+    [SerializeField] private PhaseManager phaseManager;
+
     // 主観と客観を確認する変数
     private bool subjective;
 
@@ -65,11 +68,14 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         // 子要素にあるOVRPlayerのOVRPlayerControllerコンポーネントを非アクティブにする
         // GetComponentInChildren<OVRPlayerController>().enabled = false;
         kunaiRemain = 2;
+        phaseManager = GameObject.FindWithTag("PhaseManager").GetComponent<PhaseManager>();
+        
     }
 
     public void PlayerMovement (string movementName)
     {
         enemyMove.EnemyAction();
+        phaseManager.PhaseCount();        
 
         switch (movementName)
         {
@@ -146,7 +152,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     #region Attack Action Coroutine
     IEnumerator DeleteKunai(GameObject kunai)
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(4f);
         Debug.Log(kunai);
         Destroy(kunai);
         kunaiInHand.SetActive(true);
