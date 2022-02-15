@@ -152,7 +152,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     #region Attack Action Coroutine
     IEnumerator DeleteKunai(GameObject kunai)
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2.5f);
         Debug.Log(kunai);
         Destroy(kunai);
         kunaiInHand.SetActive(true);
