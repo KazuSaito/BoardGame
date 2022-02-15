@@ -182,7 +182,6 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Win();
-            StartCoroutine("LoadEndingScene");
         }
     }
 
@@ -204,7 +203,6 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Win();
-            StartCoroutine("LoadEndingScene");
         }
     }
 

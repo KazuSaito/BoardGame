@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelUIMove : MonoBehaviour
 {
@@ -40,6 +41,20 @@ public class LevelUIMove : MonoBehaviour
         Debug.Log($"Before level: {level}");
         level += 1;
         Debug.Log($"After level: {level}");
+        StartCoroutine("NextLevelOrEnding");
+    }
+    private IEnumerator NextLevelOrEnding()
+    {
+        yield return new WaitForSeconds(4f);
+        if (level <= 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else if (level >= 3)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        
     }
 
 
