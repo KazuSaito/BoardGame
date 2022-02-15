@@ -82,6 +82,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                     Tween tween = transform.DOMove(new Vector3(0, 0, transformMove), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(0, 0, transformMove), 3f).SetRelative();
+                    StartCoroutine("CheckWinCondition");
                 }
                 break;
 
@@ -115,6 +116,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                     Tween tween = transform.DOMove(new Vector3(transformMove, 0, 0), 3f).SetRelative();
                     tween.SetEase(Ease.Linear);
                     playerModel.transform.DOMove(new Vector3(transformMove, 0, 0), 3f).SetRelative();
+                    StartCoroutine("CheckWinCondition");
                 }
                 break;
 
@@ -187,6 +189,17 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Ending");
+    }
+
+    private IEnumerator CheckWinCondition()
+    {
+        yield return new WaitForSeconds(3f);
+        if (transform.position.x > 1.1f && transform.position.z > 1.1f)
+        {
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            canvas.GetComponent<CanvasManager>().Win();
+            StartCoroutine("LoadEndingScene");
+        }
     }
 
     #endregion
