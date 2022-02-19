@@ -174,11 +174,9 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         SwordParticle();
         Invoke("SwordSound", 0.5f);
         float xDist = Mathf.Abs(transform.position.x  - enemy.transform.position.x);
-        float zDist = Mathf.Abs(transform.position.z  - enemy.transform.position.z);
-        Debug.Log(transform.position.z);
-        Debug.Log(enemy.transform.position.z);
+        float zDist = enemy.transform.position.z - transform.position.z;
         Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
-        if (xDist < 0.8f && zDist < 0.8f)
+        if (xDist < 0.8f && 0.1f < zDist && zDist < 0.8f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Win();

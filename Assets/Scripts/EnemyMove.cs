@@ -82,8 +82,10 @@ public class EnemyMove : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         EnemySwordParticle();
         Invoke("EnemySwordSound", 0.5f);
-        Debug.Log("x distance is " + xDist + ", z distance is " + zDist);
-        if (xDist < 0.8f && zDist < 0.8f)
+        float xDistForSlash = Mathf.Abs(transform.position.x - player.transform.position.x);
+        float zDistForSlash = transform.position.z - player.transform.position.z;
+        Debug.Log("x distance is " + xDistForSlash + ", z distance is " + zDistForSlash);
+        if (xDistForSlash < 0.8f && 0.1f < zDistForSlash && zDistForSlash < 0.8f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();
@@ -114,8 +116,8 @@ public class EnemyMove : MonoBehaviour
     private void LevelOne()
     {
         // distance = Vector3.Distance(player.transform.position, transform.position);
-        xDist = Mathf.Abs(transform.position.x + player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z + player.transform.position.z);
+        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
+        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
         int xOrz = Random.Range(0, 9);
 
         if (xDist > 0.8f)
@@ -242,8 +244,8 @@ public class EnemyMove : MonoBehaviour
         else if (countPhase == 2)
         {
             audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
-            anim.SetTrigger("RightTrigger");
-            transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+            anim.SetTrigger("LeftTrigger");
+            transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
         }
         else if (xDist > 0.1f)
         {
