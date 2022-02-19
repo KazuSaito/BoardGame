@@ -38,9 +38,6 @@ public class LevelUIMove : MonoBehaviour
 
     public void LevelUp()
     {
-        Debug.Log($"Before level: {level}");
-        level += 1;
-        Debug.Log($"After level: {level}");
         StartCoroutine("NextLevelOrEnding");
     }
     private IEnumerator NextLevelOrEnding()
@@ -48,6 +45,7 @@ public class LevelUIMove : MonoBehaviour
         yield return new WaitForSeconds(4f);
         if (level <= 2)
         {
+            level++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (level >= 3)

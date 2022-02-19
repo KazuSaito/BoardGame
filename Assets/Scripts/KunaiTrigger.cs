@@ -7,6 +7,7 @@ using TMPro;
 
 public class KunaiTrigger : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
         // ‚½‚Ü‚Éãè‚­”½‰‚µ‚È‚¢ƒoƒO‚ª”­¶‚·‚é‚Ì‚Å—vŒŸØ

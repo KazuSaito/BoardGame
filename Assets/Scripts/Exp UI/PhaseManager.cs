@@ -7,13 +7,16 @@ using TMPro;
 public class PhaseManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI phaseText;
-    private int phaseCount;
+    public static int phaseCount = 10;
+    public static bool collideJudgement;
 
     // Start is called before the first frame update
     void Start()
     {
-        phaseCount = 10;
+        if (!collideJudgement)
+            phaseCount = 10;
         phaseText.text = "écÇË" + phaseCount + "É^Å[Éì";
+        collideJudgement = false;
     }
 
     public void PhaseCount()
@@ -36,8 +39,6 @@ public class PhaseManager : MonoBehaviour
             canvas.GetComponent<CanvasManager>().Lose();
             StartCoroutine("LoadEndingScene");
         }
-        
-        
     }
 
     private IEnumerator LoadEndingScene()
@@ -46,6 +47,12 @@ public class PhaseManager : MonoBehaviour
         SceneManager.LoadScene("Ending");
     }
 
+    public void CollideTrigger()
+    {
+        Debug.Log(collideJudgement);
+        collideJudgement = true;
+        Debug.Log(collideJudgement);
+    }
 
 
 
