@@ -24,13 +24,6 @@ public class KunaiTrigger : MonoBehaviour
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();
-            StartCoroutine("LoadEndingScene");
         }
-    }
-
-    private IEnumerator LoadEndingScene()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Ending");
     }
 }

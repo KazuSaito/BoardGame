@@ -89,7 +89,7 @@ public class EnemyMove : MonoBehaviour
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();
-            StartCoroutine("LoadEndingScene");
+            
         }
     }
 
@@ -98,18 +98,14 @@ public class EnemyMove : MonoBehaviour
         audioSourceEnemySlash.PlayOneShot(audioEnemySlash);
     }
 
-    private IEnumerator LoadEndingScene()
-    {
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("Ending");
-    }
-
-    #endregion
-
     private void EnemySwordParticle()
     {
         enemyKunaiInHand.GetComponent<slashParticleEnemy>().EnemyKunaiParticleOn();
     }
+
+    #endregion
+
+
 
     #region LevelSettings
 

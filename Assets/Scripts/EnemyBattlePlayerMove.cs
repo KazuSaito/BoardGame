@@ -188,12 +188,6 @@ public class EnemyBattlePlayerMove : MonoBehaviour
         audioSourceSlash.PlayOneShot(audioPlayerSlash);
     }
 
-    private IEnumerator LoadEndingScene()
-    {
-        yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("Ending");
-    }
-
     private IEnumerator CheckWinCondition()
     {
         yield return new WaitForSeconds(3f);
