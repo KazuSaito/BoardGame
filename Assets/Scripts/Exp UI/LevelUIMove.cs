@@ -9,14 +9,15 @@ public class LevelUIMove : MonoBehaviour
 {
     public static int level = 1;
     [SerializeField] private TextMeshProUGUI txt;
+    [SerializeField] private GameObject bgImage;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(0, 3.5f, 1);
-        // txt.enabled = true;
+        transform.position = new Vector3(0.5f, 3.5f, 1);
+        bgImage.SetActive(true);
         txt.gameObject.SetActive(true);
-        txt.SetText("Level: {0}", level);
+        txt.SetText("Stage: {0}", level);
         StartCoroutine("LevelDisplay");
     }
 
@@ -24,15 +25,16 @@ public class LevelUIMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Sequence seq = DOTween.Sequence();
-        seq.Append(transform.DOMove(new Vector3(0, 2.0f, 1), 5f));
+        seq.Append(transform.DOMove(new Vector3(0.5f, 2.0f, 1), 5f));
         seq.Join(transform.DORotate(new Vector3(0, 360, 0), 8f, RotateMode.LocalAxisAdd).SetRelative());
-        seq.Append(transform.DOMove(new Vector3(0, 4f, 1), 9f));
+        seq.Append(transform.DOMove(new Vector3(0.5f, 4f, 1), 9f));
         StartCoroutine("HideText");
     }
 
     IEnumerator HideText()
     {
         yield return new WaitForSeconds(20f);
+        bgImage.SetActive(false);
         txt.gameObject.SetActive(false);
     }
 

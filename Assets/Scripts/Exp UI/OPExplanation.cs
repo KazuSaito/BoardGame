@@ -22,6 +22,9 @@ public class OPExplanation : MonoBehaviour
     private GameObject RulePanel;
 
     [SerializeField]
+    private GameObject ControlRulePanel;
+
+    [SerializeField]
     private GameObject StartPanel;
 
     // Start is called before the first frame update
@@ -29,6 +32,7 @@ public class OPExplanation : MonoBehaviour
     {
         EnterGamePanel.SetActive(true);
         RulePanel.SetActive(false);
+        ControlRulePanel.SetActive(false);
         StartPanel.SetActive(false);
     }
 
@@ -39,11 +43,18 @@ public class OPExplanation : MonoBehaviour
         EnterGamePanel.SetActive(false);
     }
 
+    public void OpenControlRulePanel()
+    {
+        buttonSource.PlayOneShot(clickedSound);
+        ControlRulePanel.SetActive(true);
+        RulePanel.SetActive(false);
+    }
+
     public void OpenStartPanel()
     {
         buttonSource.PlayOneShot(clickedSound);
         StartPanel.SetActive(true);
-        RulePanel.SetActive(false);
+        ControlRulePanel.SetActive(false);
     }
 
     public void StartGame()
