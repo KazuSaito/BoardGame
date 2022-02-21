@@ -118,7 +118,7 @@ public class EnemyMove : MonoBehaviour
         zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
         int xOrz = Random.Range(0, 9);
 
-        if (xDist > 0.8f)
+        if (xDist > 0.2f)
         {
             if (this.transform.position.x < 0.4f)
             {
@@ -136,7 +136,6 @@ public class EnemyMove : MonoBehaviour
         else if (zDist > 0.6f && enemyKunaiLeft >=1)
         {
             enemyKunaiInHand.SetActive(false);
-            // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
             anim.SetTrigger("ThrowTrigger");
             StartCoroutine("WaitKunaiThrowAnim");
             enemyKunaiLeft -= 1;
@@ -145,7 +144,6 @@ public class EnemyMove : MonoBehaviour
         {
             StartCoroutine("EnemySwordAttack");
         }
-        Debug.Log(xDist + ":" + zDist);
     }
 
     private void LevelTwo()
@@ -313,6 +311,43 @@ public class EnemyMove : MonoBehaviour
             anim.SetTrigger("ThrowTrigger");
             StartCoroutine("WaitKunaiThrowAnim");
         }
+    }
+
+    private void LevelFour()
+    {
+        // distance = Vector3.Distance(player.transform.position, transform.position);
+        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
+        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
+        int xOrz = Random.Range(0, 9);
+
+        if (xDist > 0.8f)
+        {
+            if (this.transform.position.x < 0.4f)
+            {
+                audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                anim.SetTrigger("RightTrigger");
+                transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+            }
+            else
+            {
+                audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                anim.SetTrigger("LeftTrigger");
+                transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+            }
+        }
+        else if (zDist > 0.6f && enemyKunaiLeft >= 1)
+        {
+            enemyKunaiInHand.SetActive(false);
+            // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+            anim.SetTrigger("ThrowTrigger");
+            StartCoroutine("WaitKunaiThrowAnim");
+            enemyKunaiLeft -= 1;
+        }
+        else
+        {
+            StartCoroutine("EnemySwordAttack");
+        }
+        Debug.Log(xDist + ":" + zDist);
     }
 
     #endregion
