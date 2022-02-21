@@ -71,6 +71,8 @@ public class EnemyMove : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         var kunai = Instantiate(enemyKunaiPrefab, enemyRightHandIndex.transform.position, new Quaternion(0, 0, 0, 0));
+        AudioClip audioKunaiEnemyThrow = kunai.GetComponent<AudioClip>();
+        kunai.GetComponent<AudioSource>().PlayOneShot(audioKunaiEnemyThrow);
         kunai.GetComponent<Rigidbody>().AddForce(new Vector3(-0.15f, 0, -enemyKunaiSpeed));
         StartCoroutine("DeleteKunai", kunai);
     }
