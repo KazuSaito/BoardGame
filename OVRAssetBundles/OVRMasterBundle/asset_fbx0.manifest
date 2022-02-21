@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2201360003
+CRC: 2357278342
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: de71a1d5b0f136190b3bc8c4d64ba817
+    Hash: fa8256c0557cca7cbabf53979aa2b365
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2b946eb736e35cb36f59eca05d1c1200
+    Hash: 87afc7500ba76266ab01978ff7cc5fdf
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -14,6 +14,12 @@ ClassTypes:
 - Class: 4
   Script: {instanceID: 0}
 - Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -29,11 +35,24 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Animation/Mutant/mutant@Orc Idle.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Standing Walk Right.fbx
+- Assets/Models/shouji.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Standing Idle 04.fbx
+- Assets/Models/fusuma/fusuma.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
-- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Throw Object.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
+- Assets/Models/kunai.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Standing Walk Left.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Stable Sword Outward Slash.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Slow Jog Backwards.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/left_touch_controller_model_skel.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Standing Run Forward.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/right_touch_controller_model_skel.fbx
+- Assets/Animation/Ninja/Ch24_nonPBR@Arm Stretching.fbx
 Dependencies:
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_png0

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1152652087
+CRC: 745741543
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 292090cfb8e94beb1b122e0ee4108731
+    Hash: afad193fa560f267a783bc9256932bf6
   TypeTreeHash:
     serializedVersion: 2
     Hash: b93bd442b8167f85f0de1ddd2c5f516d
@@ -18,11 +18,27 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
+- Assets/Animation/Ninja/Materials/Ch24_1001_Diffuse.mat
+- Assets/Materials/Tatami.mat
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk.mat
+- Assets/Models/fusuma/Fusuma.mat
+- Assets/Materials/Shouji Wood.mat
+- Assets/Models/fusuma/FusumaNormalChange.mat
+- Assets/Materials/Shouji Paper.mat
+- Assets/Models/fusuma/FusumaTop.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Materials/OculusTouchForRift_Material.mat
-- Assets/CurvedUI/Demo Scenes/Demo Scenes Content/CUI_laserbeam.mat
+- Assets/Materials/RoomLight.mat
+- Assets/Animation/Ninja/Materials/Enemy_Material.mat
 - Assets/Materials/Tile2.mat
+- Assets/Materials/Pillar.mat
+- Assets/CurvedUI/Demo Scenes/Demo Scenes Content/CUI_laserbeam.mat
+- Assets/Materials/Kunai.mat
 - Assets/Materials/Tile1.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_MAT.mat
+- Assets/Materials/Inner_Roof.mat
+- Assets/Materials/Fuchi.mat
+- Assets/Models/fusuma/FusumaNoNormal.mat
 Dependencies:
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_png0
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_tga0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_tif0

@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 3445933572
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 469a2e2a271f6ffbf916e487ce20e18d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e6e651bdddca608c77d51fff2e12d033
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/vsEnemy/ReflectionProbe-0.exr
+- Assets/Scenes/Ending/ReflectionProbe-0.exr
+- Assets/Scenes/Ending/Lightmap-0_comp_light.exr
+- Assets/Scenes/Opening/ReflectionProbe-0.exr
+- Assets/Scenes/Opening/Lightmap-0_comp_light.exr
+- Assets/Scenes/vsEnemy/Lightmap-0_comp_light.exr
+Dependencies: []

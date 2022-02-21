@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1364684829
+CRC: 3576575553
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 79cd9bbd1c3240f3ddcf97e907a41cdb
+    Hash: 7462e6c89b754d181b25f220e00fc24b
   TypeTreeHash:
     serializedVersion: 2
     Hash: fdf6c57a251b9f6ec27bdd2fe01b033c
@@ -15,11 +15,13 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Animator/EnemyController.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Animation/OculusTouchQuestAndRiftSLeftAnimation.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Animation/OculusTouchQuest2LeftAnimation.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Animation/OculusTouchRiftRightAnimation.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Animation/OculusTouchQuestAndRiftSRightAnimation.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Animation/OculusTouchQuest2RightAnimation.controller
+- Assets/Animator/PlayerController.controller
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Animation/OculusTouchRiftLeftAnimation.controller
 Dependencies:
 - C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_fbx0

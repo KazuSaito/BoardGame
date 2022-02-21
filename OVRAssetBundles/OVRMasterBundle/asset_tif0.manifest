@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 1349923315
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1ce3024a912c94c65309b6081d1ed147
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Models/tatami_texture/TexturesCom_TatamiFloor_Old_1K_roughness.tif
+- Assets/Models/inner_roof/ambientocculustion.tif
+- Assets/Models/tatami_texture/TexturesCom_TatamiFloor_Old_1K_normal.tif
+- Assets/Models/inner_roof/albedo.tif
+- Assets/Models/inner_roof/normalmap.tif
+- Assets/Models/inner_roof/roughness.tif
+- Assets/Models/TexturesCom_Wood_Planks1_noSeams_2x2_1K_albedo.tif
+- Assets/Models/inner_roof/height.tif
+- Assets/Models/tatami_texture/TexturesCom_TatamiFloor_Old_1K_height.tif
+- Assets/Models/tatami_texture/TexturesCom_TatamiFloor_Old_1K_albedo.tif
+Dependencies: []

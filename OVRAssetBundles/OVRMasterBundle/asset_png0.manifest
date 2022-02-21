@@ -1,17 +1,40 @@
 ManifestFileVersion: 0
-CRC: 2314675513
+CRC: 4110075608
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f4cfa5311bd37484bbb70016f578d0a5
+    Hash: 910ed7fc0b055f17b3eca40ea760c7e4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b0363f7088f9761414f730641bf9a24b
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Models/fusuma/fusuma_roughness.png
+- Assets/Models/fusuma/fusuma_top_normal.png
+- Assets/Animation/Ninja/Ch24_nonPBR@Arm Stretching.fbm/Enemy_Albedo.png
+- Assets/Scenes/Ending/Lightmap-0_comp_dir.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_1_Back-Z.png
+- Assets/Animation/Ninja/Ch24_nonPBR@Arm Stretching.fbm/Ch24_1001_Diffuse.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_4_Up+Y.png
+- Assets/Scenes/vsEnemy/Lightmap-0_comp_dir.png
 - Assets/Oculus/VR/Textures/OculusTouchForRift/touchController_albedo.png
+- Assets/Animation/Ninja/Ch24_nonPBR@Arm Stretching.fbm/Ch24_1001_Normal.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_5_Down-Y.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_2_Left+X.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_0_Front+Z.png
+- Assets/Models/fusuma/fusuma_normal.png
+- Assets/Models/fusuma/fusuma_top_color.png
+- Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png
+- Assets/Animation/Mutant/mutant@Great Sword Strafe.fbm/Mutant_diffuse.png
+- Assets/AllSkyFree/Deep Dusk/Deep Dusk__Cam_3_Right-X.png
+- "Assets/Models/\u30B9\u30AF\u30EA\u30FC\u30F3\u30B7\u30E7\u30C3\u30C8_2022-02-19_180032-removebg-preview.png"
+- Assets/Animation/Mutant/mutant@Great Sword Strafe.fbm/Mutant_normal.png
+- Assets/Models/fusuma/fusuma_color.png
+- Assets/Scenes/Opening/Lightmap-0_comp_dir.png
 Dependencies: []

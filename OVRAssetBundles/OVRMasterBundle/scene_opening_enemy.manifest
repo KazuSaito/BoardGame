@@ -1,0 +1,148 @@
+ManifestFileVersion: 0
+CRC: 567065157
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a961a0e1eb6fb952dbb4b4b06511f11c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6bdbb990f73ce8fb5bb4c98c2fc34ce9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7e933e81d3c20c74ea6fdc708a67e3a5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 367959482ff0f0948b11d2021ee48a8b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b38bdd8f01b04cb4ba7f116b2f8ec4ba, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 339e11e7da1e83f4e8f7cd332ee3b66e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 004b8ec0c25535c409b1f6115963d476, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 651aa76e8cc8486469816be09993892d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f07515ada089df47868559a20dd6783, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d95cda2b1e8e2b3469251ed421ad56e9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e62188adca544cf1b96ccf1630f15f9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a783f671592674b589cfc4953e28656b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e503ea6418d27594caa33b93cac1b06a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b2e569dc832500047bf4350b4dae9b97, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 22cf944941f5f734099eea16a1fe55a6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 143
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 258
+  Script: {instanceID: 0}
+- Class: 850595691
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/Opening_Enemy.unity
+Dependencies:
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_asset0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_exr0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_lighting0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_mp30
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_prefab0
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_resources
+- C:/Users/kazuk/Unity/VRAcademy/BoardGame/OVRAssetBundles/OVRMasterBundle/asset_tif0

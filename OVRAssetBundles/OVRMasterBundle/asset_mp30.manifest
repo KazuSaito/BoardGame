@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2404716934
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bf08b91a58427de4329608d9b82ca463
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/Audio/\u7573\u306E\u4E0A\u3092\u6B69\u304F-[AudioTrimmer.com].mp3"
+- "Assets/Audio/\u62CD\u5B50\u67282.mp3"
+- "Assets/Audio/\u98A8\u304C\u5439\u304F3.mp3"
+- "Assets/Audio/\u98A8\u304C\u5439\u304F1.mp3"
+- "Assets/Audio/\u5C3A\u516B.mp3"
+- "Assets/Audio/\u30CA\u30A4\u30D5\u3092\u6295\u3052\u308B.mp3"
+- "Assets/Audio/\u5263\u306E\u7D20\u632F\u308A3.mp3"
+Dependencies: []
