@@ -431,6 +431,8 @@ struct PassthroughProjectionSurface_tB27B44A28747BCB4495785540EBA23852E5C2BCA;
 struct PassthroughStyler_t87AC7A601361B0249EABA465575B8BC98524B79E;
 // PassthroughSurface
 struct PassthroughSurface_t5DEF489C691B1678CA206E5B904FF22B8FCD4264;
+// PhaseManager
+struct PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827;
 // UnityEngine.UI.RectMask2D
 struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
 // UnityEngine.RectTransform
@@ -718,6 +720,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisLineRenderer_tEF
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisMeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5_mDF6525BCE37B444313BE0AA2305BDF4EB8B92FE8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisOVRPassthroughLayer_tE81E021B78942BCB1DCCAEDDC82A25C9F6AD771F_mC30ED0209380576CE355980BD8A0A9C11C98C757_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisPhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_m2BF6B6F6CDCA208BFB13C2E3C326AD56BA3EC102_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* KeyValuePair_2_get_Key_m4C6B6F18F369C75558D62A0FD4A9A843C9EEC6FC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* KeyValuePair_2_get_Value_m48DEF7C57246FA22EAC3774DF24D7C90A805F153_RuntimeMethod_var;
@@ -3602,11 +3605,19 @@ struct CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C  : public MonoBeh
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___winPanel_4;
 	// UnityEngine.GameObject CanvasManager::losePanel
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___losePanel_5;
+	// UnityEngine.GameObject CanvasManager::panelImage
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelImage_6;
+	// UnityEngine.GameObject CanvasManager::phaseManger
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_7;
+	// System.Int32 CanvasManager::NumberWinLose
+	int32_t ___NumberWinLose_8;
 };
 
 // CollidePlayer
 struct CollidePlayer_tB5E9ED106709F106D68ED5C48F3B6BF6309723CA  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+	// UnityEngine.GameObject CollidePlayer::phaseManger
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_4;
 };
 
 // DebugUIBuilder
@@ -3741,6 +3752,8 @@ struct EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A  : public MonoBehavio
 	float ___zDist_18;
 	// System.Single EnemyMove::distance
 	float ___distance_19;
+	// System.Int32 EnemyMove::countPhase
+	int32_t ___countPhase_20;
 };
 
 // Flashlight
@@ -4219,6 +4232,21 @@ struct PassthroughSurface_t5DEF489C691B1678CA206E5B904FF22B8FCD4264  : public Mo
 	OVRPassthroughLayer_tE81E021B78942BCB1DCCAEDDC82A25C9F6AD771F* ___passthroughLayer_4;
 	// UnityEngine.MeshFilter PassthroughSurface::projectionObject
 	MeshFilter_t6D1CE2473A1E45AC73013400585A1163BF66B2F5* ___projectionObject_5;
+};
+
+// PhaseManager
+struct PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// TMPro.TextMeshProUGUI PhaseManager::phaseText
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___phaseText_4;
+};
+
+struct PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_StaticFields
+{
+	// System.Int32 PhaseManager::phaseCount
+	int32_t ___phaseCount_5;
+	// System.Boolean PhaseManager::collideJudgement
+	bool ___collideJudgement_6;
 };
 
 // SPPquad
@@ -6486,6 +6514,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugUIBuilder_Hide_mF366B8F84533FB83A4C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StartMenu_LoadScene_m1BB34F9002530F41518F90C53620126E54A4C265 (StartMenu_t75C686A394618522E32AD30C819F308E68E45818* __this, int32_t ___idx0, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Component::CompareTag(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, String_t* ___tag0, const RuntimeMethod* method) ;
+// T UnityEngine.GameObject::GetComponent<PhaseManager>()
+inline PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827* GameObject_GetComponent_TisPhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_m2BF6B6F6CDCA208BFB13C2E3C326AD56BA3EC102 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
+{
+	return ((  PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
+}
+// System.Void PhaseManager::CollideTrigger()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhaseManager_CollideTrigger_m934A131DA479B8C1343CB20A51A360ACFC6F1CE5 (PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827* __this, const RuntimeMethod* method) ;
 // UnityEngine.SceneManagement.Scene UnityEngine.SceneManagement.SceneManager::GetActiveScene()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Scene_tA1DC762B79745EB5140F054C884855B922318356 SceneManager_GetActiveScene_m2DB2A1ACB84805968A4B6396BFDFB92C0AF32BCE (const RuntimeMethod* method) ;
 // System.String UnityEngine.SceneManagement.Scene::get_name()
@@ -22253,6 +22288,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollidePlayer_OnTriggerEnter_mD3495A4D74
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisPhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_m2BF6B6F6CDCA208BFB13C2E3C326AD56BA3EC102_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3260331AF5DA53ABC7CA7BAF659CF8D9FC93DEC7);
 		s_Il2CppMethodInitialized = true;
@@ -22270,21 +22306,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollidePlayer_OnTriggerEnter_mD3495A4D74
 		bool L_2 = V_0;
 		if (!L_2)
 		{
-			goto IL_0025;
+			goto IL_0036;
 		}
 	}
 	{
+		// phaseManger.GetComponent<PhaseManager>().CollideTrigger();
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___phaseManger_4;
+		NullCheck(L_3);
+		PhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827* L_4;
+		L_4 = GameObject_GetComponent_TisPhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_m2BF6B6F6CDCA208BFB13C2E3C326AD56BA3EC102(L_3, GameObject_GetComponent_TisPhaseManager_t3BF50F09319362DC78078E66849AD2F8DB565827_m2BF6B6F6CDCA208BFB13C2E3C326AD56BA3EC102_RuntimeMethod_var);
+		NullCheck(L_4);
+		PhaseManager_CollideTrigger_m934A131DA479B8C1343CB20A51A360ACFC6F1CE5(L_4, NULL);
 		// SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
-		Scene_tA1DC762B79745EB5140F054C884855B922318356 L_3;
-		L_3 = SceneManager_GetActiveScene_m2DB2A1ACB84805968A4B6396BFDFB92C0AF32BCE(NULL);
-		V_1 = L_3;
-		String_t* L_4;
-		L_4 = Scene_get_name_m3C818DFA663E159274DAD823B780C7616C5E2A8C((&V_1), NULL);
-		SceneManager_LoadScene_m7237839058F581BFCA0A79BB96F6F931469E43CF(L_4, NULL);
+		Scene_tA1DC762B79745EB5140F054C884855B922318356 L_5;
+		L_5 = SceneManager_GetActiveScene_m2DB2A1ACB84805968A4B6396BFDFB92C0AF32BCE(NULL);
+		V_1 = L_5;
+		String_t* L_6;
+		L_6 = Scene_get_name_m3C818DFA663E159274DAD823B780C7616C5E2A8C((&V_1), NULL);
+		SceneManager_LoadScene_m7237839058F581BFCA0A79BB96F6F931469E43CF(L_6, NULL);
 	}
 
-IL_0025:
+IL_0036:
 	{
 		// }
 		return;
