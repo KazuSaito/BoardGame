@@ -207,19 +207,43 @@ public class EnemyMove : MonoBehaviour
                 }
                 else
                 {
-                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
-                    anim.SetTrigger("RightTrigger");
-                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                    if (this.transform.position.x < 0.8f)
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("RightTrigger");
+                        transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
+                    else
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("LeftTrigger");
+                        transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
                 }
             }
 
             else
             {
-                if (xOrz > 4)
+                if (xOrz > 4 && transform.position.z < 1.0f)
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("BackTrigger");
                     transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                }
+                else if (xOrz > 2)
+                {
+                    if (this.transform.position.x < 0.8f)
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("RightTrigger");
+                        transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
+                    else
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("LeftTrigger");
+                        transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
                 }
                 else
                 {

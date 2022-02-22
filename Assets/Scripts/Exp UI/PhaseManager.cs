@@ -34,7 +34,7 @@ public class PhaseManager : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();
             StartCoroutine("LoadEndingScene");
