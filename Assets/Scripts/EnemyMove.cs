@@ -150,7 +150,7 @@ public class EnemyMove : MonoBehaviour
     {
         // distance = Vector3.Distance(player.transform.position, transform.position);
         xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
+        zDist = transform.position.z - player.transform.position.z;
         int xOrz = Random.Range(0, 9);
 
         if (xDist > 0.1f)
@@ -197,9 +197,25 @@ public class EnemyMove : MonoBehaviour
                 }
             }
 
+            else if (zDist < 0)
+            {
+                if (xOrz > 4)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("BackTrigger");
+                    transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
+
             else
             {
-                if (xOrz == 0)
+                if (xOrz > 4)
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("BackTrigger");
@@ -228,7 +244,7 @@ public class EnemyMove : MonoBehaviour
         countPhase ++;
         // distance = Vector3.Distance(player.transform.position, transform.position);
         xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
+        zDist = transform.position.z - player.transform.position.z;
         int xOrz = Random.Range(0, 9);
 
         if (countPhase == 1)
@@ -287,9 +303,25 @@ public class EnemyMove : MonoBehaviour
                 }
             }
 
+            else if (zDist < 0)
+            {
+                if (xOrz > 4)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("BackTrigger");
+                    transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
+
             else
             {
-                if (xOrz == 0)
+                if (xOrz > 4)
                 {
                     audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                     anim.SetTrigger("BackTrigger");
