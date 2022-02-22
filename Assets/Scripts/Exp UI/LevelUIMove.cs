@@ -25,9 +25,9 @@ public class LevelUIMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Sequence seq = DOTween.Sequence();
-        seq.Append(transform.DOMove(new Vector3(0.6f, 2.0f, 1), 5f));
-        seq.Join(transform.DORotate(new Vector3(0, 360, 0), 8f, RotateMode.LocalAxisAdd).SetRelative());
-        seq.Append(transform.DOMove(new Vector3(0.6f, 4f, 1), 9f));
+        seq.Append(transform.DOMove(new Vector3(0.6f, 1.0f, 1), 4f));
+        seq.Join(transform.DORotate(new Vector3(0, 360, 0), 6f, RotateMode.LocalAxisAdd).SetRelative());
+        seq.Append(transform.DOMove(new Vector3(0.6f, 4f, 1), 8f));
         StartCoroutine("HideText");
     }
 
