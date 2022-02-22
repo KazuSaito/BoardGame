@@ -3607,10 +3607,12 @@ struct CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C  : public MonoBeh
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___losePanel_5;
 	// UnityEngine.GameObject CanvasManager::panelImage
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelImage_6;
+	// UnityEngine.UI.Image CanvasManager::panelImageColor
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___panelImageColor_7;
 	// UnityEngine.GameObject CanvasManager::phaseManger
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_8;
 	// System.Int32 CanvasManager::NumberWinLose
-	int32_t ___NumberWinLose_8;
+	int32_t ___NumberWinLose_9;
 };
 
 // CollidePlayer

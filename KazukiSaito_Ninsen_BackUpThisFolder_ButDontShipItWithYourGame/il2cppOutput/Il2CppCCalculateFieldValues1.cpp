@@ -5535,51 +5535,51 @@ struct U3CU3Ec_t61EC48662651D896DF185E3622F367EE4D649BDC_StaticFields
 	Predicate_1_t0729156EF7F8B2C367BA6C92C091D97CDEC0B53F* ___U3CU3E9__2_0_1;
 };
 
-// CanvasManager/<LoadEndingScene>d__10
-struct U3CLoadEndingSceneU3Ed__10_t4110004B287139797B6875E5136DC018CE295523  : public RuntimeObject
+// CanvasManager/<LoadEndingScene>d__11
+struct U3CLoadEndingSceneU3Ed__11_t22DD3E49E7EA5BF51A4556771778F305AA9A1D36  : public RuntimeObject
 {
-	// System.Int32 CanvasManager/<LoadEndingScene>d__10::<>1__state
+	// System.Int32 CanvasManager/<LoadEndingScene>d__11::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object CanvasManager/<LoadEndingScene>d__10::<>2__current
+	// System.Object CanvasManager/<LoadEndingScene>d__11::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// CanvasManager CanvasManager/<LoadEndingScene>d__10::<>4__this
+	// CanvasManager CanvasManager/<LoadEndingScene>d__11::<>4__this
 	CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C* ___U3CU3E4__this_2;
 };
 
-// CanvasManager/<SameTimingCheckLose>d__12
-struct U3CSameTimingCheckLoseU3Ed__12_t0CB56E7F3979C0EE7E22918A2058B9DCE73A3F23  : public RuntimeObject
+// CanvasManager/<SameTimingCheckLose>d__13
+struct U3CSameTimingCheckLoseU3Ed__13_t3AF8C8532E35CE7C4246B99A82C5575E323719F8  : public RuntimeObject
 {
-	// System.Int32 CanvasManager/<SameTimingCheckLose>d__12::<>1__state
+	// System.Int32 CanvasManager/<SameTimingCheckLose>d__13::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object CanvasManager/<SameTimingCheckLose>d__12::<>2__current
+	// System.Object CanvasManager/<SameTimingCheckLose>d__13::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// CanvasManager CanvasManager/<SameTimingCheckLose>d__12::<>4__this
+	// CanvasManager CanvasManager/<SameTimingCheckLose>d__13::<>4__this
 	CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C* ___U3CU3E4__this_2;
 };
 
-// CanvasManager/<SameTimingCheckWin>d__11
-struct U3CSameTimingCheckWinU3Ed__11_tFCB63203AE1BB56E26CE4A771BFA8E0A67D64A69  : public RuntimeObject
+// CanvasManager/<SameTimingCheckWin>d__12
+struct U3CSameTimingCheckWinU3Ed__12_t13D1BC2F31B4E84F47E3027691B220F39A32F9EB  : public RuntimeObject
 {
-	// System.Int32 CanvasManager/<SameTimingCheckWin>d__11::<>1__state
+	// System.Int32 CanvasManager/<SameTimingCheckWin>d__12::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object CanvasManager/<SameTimingCheckWin>d__11::<>2__current
+	// System.Object CanvasManager/<SameTimingCheckWin>d__12::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// CanvasManager CanvasManager/<SameTimingCheckWin>d__11::<>4__this
+	// CanvasManager CanvasManager/<SameTimingCheckWin>d__12::<>4__this
 	CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C* ___U3CU3E4__this_2;
-	// UnityEngine.GameObject CanvasManager/<SameTimingCheckWin>d__11::<levelManager>5__1
+	// UnityEngine.GameObject CanvasManager/<SameTimingCheckWin>d__12::<levelManager>5__1
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___U3ClevelManagerU3E5__1_3;
 };
 
-// CanvasManager/<WinLosePanel>d__9
-struct U3CWinLosePanelU3Ed__9_t447FF8E97ED04C8412CA79D3F3E6F6B6290D1464  : public RuntimeObject
+// CanvasManager/<WinLosePanel>d__10
+struct U3CWinLosePanelU3Ed__10_tE6D7106E049CAC77BB64A52DB21F894E30450805  : public RuntimeObject
 {
-	// System.Int32 CanvasManager/<WinLosePanel>d__9::<>1__state
+	// System.Int32 CanvasManager/<WinLosePanel>d__10::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object CanvasManager/<WinLosePanel>d__9::<>2__current
+	// System.Object CanvasManager/<WinLosePanel>d__10::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// UnityEngine.GameObject CanvasManager/<WinLosePanel>d__9::panel
+	// UnityEngine.GameObject CanvasManager/<WinLosePanel>d__10::panel
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panel_2;
-	// CanvasManager CanvasManager/<WinLosePanel>d__9::<>4__this
+	// CanvasManager CanvasManager/<WinLosePanel>d__10::<>4__this
 	CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C* ___U3CU3E4__this_3;
 };
 
@@ -34189,10 +34189,12 @@ struct CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C  : public MonoBeh
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___losePanel_5;
 	// UnityEngine.GameObject CanvasManager::panelImage
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___panelImage_6;
+	// UnityEngine.UI.Image CanvasManager::panelImageColor
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___panelImageColor_7;
 	// UnityEngine.GameObject CanvasManager::phaseManger
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_8;
 	// System.Int32 CanvasManager::NumberWinLose
-	int32_t ___NumberWinLose_8;
+	int32_t ___NumberWinLose_9;
 };
 
 // Photon.Chat.Demo.ChannelSelector
@@ -45404,19 +45406,19 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4504[17] =
 	static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyKunaiPrefab_4)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyKunaiSpeed_5)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyKunaiInHand_6)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyRightHandIndex_7)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyKunaiLeft_8)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___player_9)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___anim_10)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyTransformMove_11)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___audioEnemySlash_12)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___audioSourceEnemySlash_13)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___audioEnemyMove_14)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___audioSourceEnemyMove_15)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___enemyLevel_16)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___xDist_17)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___zDist_18)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___distance_19)),static_cast<int32_t>(offsetof(EnemyMove_tCE9FDDA16323BA73D32A1A11BCFE1AB61DFB408A, ___countPhase_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4505[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__9_t447FF8E97ED04C8412CA79D3F3E6F6B6290D1464, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__9_t447FF8E97ED04C8412CA79D3F3E6F6B6290D1464, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__9_t447FF8E97ED04C8412CA79D3F3E6F6B6290D1464, ___panel_2)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__9_t447FF8E97ED04C8412CA79D3F3E6F6B6290D1464, ___U3CU3E4__this_3)),};
+	static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__10_tE6D7106E049CAC77BB64A52DB21F894E30450805, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__10_tE6D7106E049CAC77BB64A52DB21F894E30450805, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__10_tE6D7106E049CAC77BB64A52DB21F894E30450805, ___panel_2)),static_cast<int32_t>(offsetof(U3CWinLosePanelU3Ed__10_tE6D7106E049CAC77BB64A52DB21F894E30450805, ___U3CU3E4__this_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4506[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__10_t4110004B287139797B6875E5136DC018CE295523, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__10_t4110004B287139797B6875E5136DC018CE295523, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__10_t4110004B287139797B6875E5136DC018CE295523, ___U3CU3E4__this_2)),};
+	static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__11_t22DD3E49E7EA5BF51A4556771778F305AA9A1D36, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__11_t22DD3E49E7EA5BF51A4556771778F305AA9A1D36, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CLoadEndingSceneU3Ed__11_t22DD3E49E7EA5BF51A4556771778F305AA9A1D36, ___U3CU3E4__this_2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4507[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__11_tFCB63203AE1BB56E26CE4A771BFA8E0A67D64A69, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__11_tFCB63203AE1BB56E26CE4A771BFA8E0A67D64A69, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__11_tFCB63203AE1BB56E26CE4A771BFA8E0A67D64A69, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__11_tFCB63203AE1BB56E26CE4A771BFA8E0A67D64A69, ___U3ClevelManagerU3E5__1_3)),};
+	static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__12_t13D1BC2F31B4E84F47E3027691B220F39A32F9EB, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__12_t13D1BC2F31B4E84F47E3027691B220F39A32F9EB, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__12_t13D1BC2F31B4E84F47E3027691B220F39A32F9EB, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CSameTimingCheckWinU3Ed__12_t13D1BC2F31B4E84F47E3027691B220F39A32F9EB, ___U3ClevelManagerU3E5__1_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4508[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__12_t0CB56E7F3979C0EE7E22918A2058B9DCE73A3F23, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__12_t0CB56E7F3979C0EE7E22918A2058B9DCE73A3F23, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__12_t0CB56E7F3979C0EE7E22918A2058B9DCE73A3F23, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4509[5] = 
+	static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__13_t3AF8C8532E35CE7C4246B99A82C5575E323719F8, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__13_t3AF8C8532E35CE7C4246B99A82C5575E323719F8, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSameTimingCheckLoseU3Ed__13_t3AF8C8532E35CE7C4246B99A82C5575E323719F8, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4509[6] = 
 {
-	static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___winPanel_4)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___losePanel_5)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___panelImage_6)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___phaseManger_7)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___NumberWinLose_8)),};
+	static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___winPanel_4)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___losePanel_5)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___panelImage_6)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___panelImageColor_7)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___phaseManger_8)),static_cast<int32_t>(offsetof(CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C, ___NumberWinLose_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4510[1] = 
 {
 };

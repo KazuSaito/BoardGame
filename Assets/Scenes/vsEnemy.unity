@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cf13046941a104f47aef930751b872cf, type: 2}
+    - target: {fileID: 114264954886025654, guid: bcd9d94a56f575340a261fb992072904, type: 3}
+      propertyPath: hideWhenNotAimingAtCanvas
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114273684015460166, guid: bcd9d94a56f575340a261fb992072904, type: 3}
       propertyPath: autoSwitchHands
       value: 0
@@ -15179,25 +15183,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &482483300961894184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482483300961894189}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  pointer: {fileID: 0}
-  sortOrder: 0
 --- !u!224 &482483300961894185
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15248,7 +15233,6 @@ GameObject:
   - component: {fileID: 482483300961894190}
   - component: {fileID: 482483300961894191}
   - component: {fileID: 482483300961894188}
-  - component: {fileID: 482483300961894184}
   - component: {fileID: 482483300961894192}
   m_Layer: 5
   m_Name: ControlCanvas
