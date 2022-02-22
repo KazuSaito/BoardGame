@@ -15839,8 +15839,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OVRPlayerController__ctor_mCA245257C06D3
 		__this->___useProfileData_16 = (bool)1;
 		// public bool EnableLinearMovement = false;
 		__this->___EnableLinearMovement_22 = (bool)0;
-		// public bool EnableRotation = true;
-		__this->___EnableRotation_23 = (bool)1;
+		// public bool EnableRotation = false;
+		__this->___EnableRotation_23 = (bool)0;
 		// public bool RotationEitherThumbstick = false;
 		__this->___RotationEitherThumbstick_24 = (bool)0;
 		// protected CharacterController Controller = null;
