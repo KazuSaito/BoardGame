@@ -61,7 +61,7 @@ public class EnemyMove : MonoBehaviour
     #region Coroutine Methods
     IEnumerator DeleteKunai(GameObject kunai)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
         Debug.Log(kunai);
         Destroy(kunai);
         enemyKunaiInHand.SetActive(true);
@@ -79,15 +79,15 @@ public class EnemyMove : MonoBehaviour
 
     IEnumerator EnemySwordAttack()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         anim.SetTrigger("SwordTrigger");
-        yield return new WaitForSeconds(1.1f);
         EnemySwordParticle();
+        yield return new WaitForSeconds(1.1f);
         Invoke("EnemySwordSound", 0.5f);
         float xDistForSlash = Mathf.Abs(transform.position.x - player.transform.position.x);
         float zDistForSlash = transform.position.z - player.transform.position.z;
         Debug.Log("x distance is " + xDistForSlash + ", z distance is " + zDistForSlash);
-        if (xDistForSlash < 0.8f && 0.1f < zDistForSlash && zDistForSlash < 0.8f)
+        if (xDistForSlash < 0.6f && 0.1f < zDistForSlash && zDistForSlash < 0.6f)
         {
             GameObject canvas = GameObject.FindWithTag("Canvas");
             canvas.GetComponent<CanvasManager>().Lose();

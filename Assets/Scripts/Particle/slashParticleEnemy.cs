@@ -20,7 +20,7 @@ public class slashParticleEnemy : MonoBehaviour
 
     private IEnumerator ParticleOff()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.4f);
         enemyKunaiParticle.SetActive(false);
     }
 

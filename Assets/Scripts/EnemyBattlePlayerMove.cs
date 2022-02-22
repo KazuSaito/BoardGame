@@ -127,10 +127,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
                 break;
 
             case "SwordButton":
-                StartCoroutine("SwordAction");
-                // プレイヤー同士の距離(x,z distance)の差を使って判定するのがいいかも → クナイのcolliderで暫定的に判定できていそう
-                // particle等のeffectで攻撃範囲を視覚的によりわかりやすくする
-                
+                StartCoroutine("SwordAction");                
                 break;
 
             case "GunButton":
@@ -152,7 +149,7 @@ public class EnemyBattlePlayerMove : MonoBehaviour
     #region Attack Action Coroutine
     IEnumerator DeleteKunai(GameObject kunai)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
         Debug.Log(kunai);
         Destroy(kunai);
         kunaiInHand.SetActive(true);
