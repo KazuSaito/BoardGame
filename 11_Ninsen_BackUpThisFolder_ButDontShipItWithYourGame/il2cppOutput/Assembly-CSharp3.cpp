@@ -3611,8 +3611,14 @@ struct CanvasManager_t2F97CDE0D08B095FCDD0788D60B3141E1612EC1C  : public MonoBeh
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___panelImageColor_7;
 	// UnityEngine.GameObject CanvasManager::phaseManger
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___phaseManger_8;
+	// UnityEngine.AudioSource CanvasManager::audioSource
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___audioSource_9;
+	// UnityEngine.AudioClip CanvasManager::audioWin
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___audioWin_10;
+	// UnityEngine.AudioClip CanvasManager::audioLose
+	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___audioLose_11;
 	// System.Int32 CanvasManager::NumberWinLose
-	int32_t ___NumberWinLose_9;
+	int32_t ___NumberWinLose_12;
 };
 
 // CollidePlayer

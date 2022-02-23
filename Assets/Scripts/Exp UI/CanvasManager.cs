@@ -13,6 +13,14 @@ public class CanvasManager : MonoBehaviour
 
     [SerializeField] private GameObject phaseManger;
 
+    [Header("AudioSettings")]
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip audioWin;
+    [SerializeField]
+    private AudioClip audioLose;
+
     // 0: default, 1: win, 2: lose
     private int NumberWinLose;
 
@@ -58,9 +66,18 @@ public class CanvasManager : MonoBehaviour
         panelImage.SetActive(true);
         panel.SetActive(true);
         if (panel == losePanel)
+        {
             panelImageColor.color = new Color(0.1285867f, 0.2224655f, 0.3962264f, 1.0f);
+            audioSource.PlayOneShot(audioLose);
+        }
+            
         else
+        {
             panelImageColor.color = new Color(0.8773585f, 0.4064247f, 0.3592204f, 1.0f);
+            audioSource.PlayOneShot(audioWin);
+
+        }
+            
 
         Debug.Log(panelImageColor);
     }
