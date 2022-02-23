@@ -53,6 +53,10 @@ public class EnemyMove : MonoBehaviour
             case 3:
                 LevelThree();
                 break;
+
+            case 4:
+                LevelFour();
+                break;
         }
 
         
@@ -254,12 +258,43 @@ public class EnemyMove : MonoBehaviour
         else 
         {
             if (enemyKunaiLeft < 1)
-                return;
+            {
+                if (this.transform.position.x < 0.8f)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("LeftTrigger");
+                    transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
 
-            enemyKunaiInHand.SetActive(false);
-            // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
-            anim.SetTrigger("ThrowTrigger");
-            StartCoroutine("WaitKunaiThrowAnim");
+            else if (xOrz > 3)
+            {
+                enemyKunaiInHand.SetActive(false);
+                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+                anim.SetTrigger("ThrowTrigger");
+                StartCoroutine("WaitKunaiThrowAnim");
+            }
+
+            else if (this.transform.position.x < 0.8f)
+            {
+                audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                anim.SetTrigger("RightTrigger");
+                transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+            }
+            else
+            {
+                audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                anim.SetTrigger("LeftTrigger");
+                transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+            }
+
+
         }
     }
 
@@ -357,28 +392,33 @@ public class EnemyMove : MonoBehaviour
                 }
             }
         }
-        else 
+        else
         {
             if (enemyKunaiLeft < 1)
-                return;
+            {
+                if (this.transform.position.x < 0.8f)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("LeftTrigger");
+                    transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
 
-            enemyKunaiInHand.SetActive(false);
-            // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
-            anim.SetTrigger("ThrowTrigger");
-            StartCoroutine("WaitKunaiThrowAnim");
-        }
-    }
+            else if (xOrz > 3)
+            {
+                enemyKunaiInHand.SetActive(false);
+                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+                anim.SetTrigger("ThrowTrigger");
+                StartCoroutine("WaitKunaiThrowAnim");
+            }
 
-    private void LevelFour()
-    {
-        // distance = Vector3.Distance(player.transform.position, transform.position);
-        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
-        zDist = Mathf.Abs(transform.position.z - player.transform.position.z);
-        int xOrz = Random.Range(0, 9);
-
-        if (xDist > 0.8f)
-        {
-            if (this.transform.position.x < 0.4f)
+            else if (this.transform.position.x < 0.8f)
             {
                 audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
                 anim.SetTrigger("RightTrigger");
@@ -390,20 +430,136 @@ public class EnemyMove : MonoBehaviour
                 anim.SetTrigger("LeftTrigger");
                 transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
             }
+
+
         }
-        else if (zDist > 0.6f && enemyKunaiLeft >= 1)
+    }
+
+    private void LevelFour()
+    {
+        countPhase++;
+        // distance = Vector3.Distance(player.transform.position, transform.position);
+        xDist = Mathf.Abs(transform.position.x - player.transform.position.x);
+        zDist = transform.position.z - player.transform.position.z;
+        int xOrz = Random.Range(0, 9);
+
+        if (countPhase == 1)
         {
+            audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+            anim.SetTrigger("ForwardTrigger");
+            transform.DOMove(new Vector3(0, 0, -enemyTransformMove), 3f).SetRelative();
+        }
+        else if (countPhase == 2)
+        {
+            audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+            anim.SetTrigger("LeftTrigger");
+            transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+        }
+        else if (countPhase == 3)
+        {
+            if (xDist < 0.2f)
+            {
+                enemyKunaiInHand.SetActive(false);
+                // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
+                anim.SetTrigger("ThrowTrigger");
+                StartCoroutine("WaitKunaiThrowAnim");
+            }
+            else if (xDist < 0.6f)
+            {
+                StartCoroutine("EnemySwordAttack");
+            }
+            else
+            {
+                audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                anim.SetTrigger("BackTrigger");
+                transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+            }
+        }
+
+        else if (xDist > 0.1f)
+        {
+            if (zDist > 0.6f)
+            {
+                if (xOrz > 2)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("ForwardTrigger");
+                    transform.DOMove(new Vector3(0, 0, -enemyTransformMove), 3f).SetRelative();
+                }
+                else
+                {
+                    if (this.transform.position.x < 0.4f)
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("RightTrigger");
+                        transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
+                    else
+                    {
+                        audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                        anim.SetTrigger("LeftTrigger");
+                        transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                    }
+                }
+            }
+
+            // 上記と順序が逆のほうが自然だが、あえてこれで
+            else if (xDist > 0.6f)
+            {
+                if (this.transform.position.x < 0.4f)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("LeftTrigger");
+                    transform.DOMove(new Vector3(-enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
+
+            else if (zDist < 0)
+            {
+                if (xOrz > 4)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("BackTrigger");
+                    transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                }
+                else
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("RightTrigger");
+                    transform.DOMove(new Vector3(enemyTransformMove, 0, 0), 3f).SetRelative();
+                }
+            }
+
+            else
+            {
+                if (xOrz > 4)
+                {
+                    audioSourceEnemyMove.PlayOneShot(audioEnemyMove);
+                    anim.SetTrigger("BackTrigger");
+                    transform.DOMove(new Vector3(0, 0, enemyTransformMove), 3f).SetRelative();
+                }
+                else
+                {
+                    StartCoroutine("EnemySwordAttack");
+                }
+            }
+        }
+        else
+        {
+            if (enemyKunaiLeft < 1)
+                return;
+
             enemyKunaiInHand.SetActive(false);
             // 以下ではアニメーションに合わせてクナイを投げられるようにするため、Coroutineを二つ実装
             anim.SetTrigger("ThrowTrigger");
             StartCoroutine("WaitKunaiThrowAnim");
-            enemyKunaiLeft -= 1;
         }
-        else
-        {
-            StartCoroutine("EnemySwordAttack");
-        }
-        Debug.Log(xDist + ":" + zDist);
     }
 
     #endregion
