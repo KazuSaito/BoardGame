@@ -5,20 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class EndingManager : MonoBehaviour
 {
-    public void ContinueButtonClicked ()
+    private LevelUIMove levelManager;
+
+    private void Start()
     {
+        levelManager = GameObject.FindWithTag("LevelMg").GetComponent<LevelUIMove>();
+    }
+
+    public void RestartButtonClicked ()
+    {
+        levelManager.Restart();
         SceneManager.LoadScene("Opening_Enemy");
+    }
+
+    public void ContinueButtonClicked()
+    {    
+        SceneManager.LoadScene("vsEnemy");
     }
 
     public void FinishButtonClicked ()
     {
-        Debug.Log("Finish Game");
         Invoke("FinishGame", 1.5f);
     }
 
     private void FinishGame()
     {
-        // Oculus Link‚Å‚Í‚Å‚«‚È‚³‚»‚¤Abuild‚µ‚ÄŠm”F—\’è
         UnityEngine.Application.Quit();
     }
 }

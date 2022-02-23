@@ -14,6 +14,7 @@ public class LevelUIMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this);
         transform.position = new Vector3(0.6f, 3.5f, 1);
         bgImage.SetActive(true);
         txt.gameObject.SetActive(true);
@@ -50,11 +51,21 @@ public class LevelUIMove : MonoBehaviour
             level++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (level >= 3)
+        else if (level == 3)
+        {
+            level++;
+            SceneManager.LoadScene("Ending");
+        }
+        else if (level == 4)
         {
             SceneManager.LoadScene("Ending");
         }
         
+    }
+
+    public void Restart()
+    {
+        level = 1;
     }
 
 
